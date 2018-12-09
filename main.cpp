@@ -1,9 +1,18 @@
 #include<cstdlib>
 #include <GL/glut.h>
-
+#include<vector>
+#include<memory>
+#include "Portal.hpp"
+#include "Virus.hpp"
+#include "EvasiveVirus.hpp"
+#include "StrongVirus.hpp"
+#include "FastVirus.hpp"
 static void on_keyboard(unsigned char key, int x, int y);
 static void on_reshape(int width, int height);
 static void on_display(void);
+
+vd::Portal p;
+std::vector<std::unique_ptr<vd::Virus>> viruses;
 int main(int argc, char **argv)
 {
     // Initialize glut
@@ -22,6 +31,11 @@ int main(int argc, char **argv)
 
     glClearColor(0, 0, 0, 0);
 
+    viruses.push_back(std::make_unique<vd::EvasiveVirus>());
+    viruses.push_back(std::make_unique<vd::StrongVirus>());
+    viruses.push_back(std::make_unique<vd::FastVirus>());
+   
+   
     glutMainLoop();
 
     return 0;
@@ -61,6 +75,10 @@ static void on_display(void)
             glVertex3f(3, i, 0); glVertex3f(-3, i, 0);
         }
     glEnd();
+    p.draw();
 
+    for (auto& p: viruses) {
+        p->draw();
+    }
     glutSwapBuffers();
 }

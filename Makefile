@@ -1,14 +1,16 @@
-PROGRAM = VirusDefender
 CC      = g++
-CFLAGS  = -g -ansi -Wall -std=c++17 -Wextra -I/include
-LFLAGS  = -lglut -lGLU -lGL
-SRCDIR = src
+CXXFLAGS  = -g -Wall -std=c++17 -Wextra
+CPPFLAGS  = -lglut -lGLU -lGL
 
-$(PROGRAM): main.o
-	$(CC) -o $(PROGRAM) main.o $(LFLAGS)
+SRC_FILES := $(wildcard *.cpp)
+OBJ_FILES := $(patsubst %.cpp, %.o, $(SRC_FILES))
 
-main.o : $(SRCDIR)/main.cpp
-	$(CC) -c $(SRCDIR)/main.cpp -o main.o $(CFLAGS)
+main: $(OBJ_FILES)
+	$(CC) -o $@ $^ $(CPPFLAGS)
+
+%.o: %.cpp
+	$(CC) $(CXXFLAGS) -c -o $@ $< $(CPPFLAGS)
+
 
 .PHONY: clean
 
