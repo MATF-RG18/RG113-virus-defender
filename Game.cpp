@@ -4,7 +4,7 @@
 namespace vd {
 
     Game::Game() : m_camera(), m_keyboard_action(m_camera),
-    m_mouse_motion_action(m_camera) {
+    m_passive_mouse_motion_action(m_camera, m_window) {
         
     }
 
@@ -13,14 +13,16 @@ namespace vd {
     }
 
     void Game::update() {
-        // std::cerr << 1;
+         std::cerr << 1;
     }
     void Game::set_keyboard_input(unsigned char key, int x, int y) {
+        y = m_window.get_height() - y;
         m_keyboard_action(key, x, y);
     }
 
     void Game::set_passive_mouse_motion_input(int x, int y) {
-        m_mouse_motion_action(x,y);
+        y = m_window.get_height() - y;
+        m_passive_mouse_motion_action(x,y);
     }
 
     void Game::draw() {
@@ -31,12 +33,12 @@ namespace vd {
         // gluLookAt(10, 10, 10, 0, 0, 0, 0, 0, 1);
         m_camera.setup();
         // Draw white wired plane
-        glColor3f(1.0, 1.0, 1.0);
-        glBegin(GL_LINES);
-            for (GLfloat i = 0; i <= 50; i += 0.5) {
-                glVertex3f(i, 0, 0); glVertex3f(i, 50, 0);
-                glVertex3f(0, i, 0); glVertex3f(50, i, 0);
-            }
+        glColor3f(3.0, 3.0, 3.0);
+        glBegin(GL_POLYGON);
+            glVertex3f(0,0,0);
+            glVertex3f(0,50,0);
+            glVertex3f(50, 50, 0);
+            glVertex3f(50, 0, 0);
         glEnd();
 
         glPushMatrix();

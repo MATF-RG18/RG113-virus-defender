@@ -8,17 +8,22 @@ static void on_reshape(int width, int height);
 static void on_display(void);
 static void on_timer(int value);
 static void on_passive_mouse_motion(int x, int y);
+static void on_keyboard_up(unsigned char key, int x, int y);
 vd::Game game;
 
 
 int main(int argc, char **argv)
 {
+    
+    game.window().set_width(1024);
+    game.window().set_height(1024);
+
     // Initialize glut
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
 
     // Initialize window
-    glutInitWindowSize(900, 900);
+    glutInitWindowSize(game.window().get_width(), game.window().get_height());
     glutInitWindowPosition(100, 100);
     glutCreateWindow(argv[0]);
 
@@ -28,14 +33,25 @@ int main(int argc, char **argv)
     glutDisplayFunc(on_display);
     glutTimerFunc(game.get_msec_timer_update(), on_timer, game.get_timer_id());
     glutPassiveMotionFunc(on_passive_mouse_motion);
+    
+    glutSetKeyRepeat(GLUT_KEY_REPEAT_OFF);
+    glutKeyboardUpFunc(on_keyboard_up);
+
+
     glClearColor(0, 0, 0, 0);
-   
+
+    game.init();
 
     glutMainLoop();
 
     return 0;
 }
 
+
+static void on_keyboard_up(unsigned char key, int x, int y)
+{
+
+}
 static void on_timer(int value)
 {
     game.update();
@@ -66,10 +82,11 @@ static void on_reshape(int width, int height)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(30, (float) width / height, 1, 100);
+    game.window().set_height(height);
+    game.window().set_width(width);
 }
 
 static void on_display(void)
 {
     game.draw();
-    
 }

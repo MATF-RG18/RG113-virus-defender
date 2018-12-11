@@ -9,10 +9,10 @@ namespace vd {
             case '3': return on_3(x,y);
             case '4': return on_4(x,y);
 
-            case 'w': return on_w(x,y);
-            case 'a': return on_a(x,y);
-            case 's': return on_s(x,y);
-            case 'd': return on_d(x,y);
+            // case 'w': return on_w(x,y);
+            // case 'a': return on_a(x,y);
+            // case 's': return on_s(x,y);
+            // case 'd': return on_d(x,y);
         }
     }
 
@@ -32,25 +32,21 @@ namespace vd {
     }
     void KeyboardAction::on_w(int x,int y){
         std::cerr << 'w';        
-
-        m_camera.move_w();      
+     
     }
     void KeyboardAction::on_a(int x,int y){
         std::cerr << 'a';        
-
-        m_camera.move_a();        
+       
         
     }
     void KeyboardAction::on_s(int x,int y){
         std::cerr << 's';        
-
-        m_camera.move_s();       
+      
         
     }
     void KeyboardAction::on_d(int x,int y){
         std::cerr << 'd';        
-
-        m_camera.move_d();       
+      
     }
 
 }
