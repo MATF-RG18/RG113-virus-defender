@@ -3,7 +3,7 @@
 #if !defined(GAMEOBJECT_HPP)
 #define GAMEOBJECT_HPP
 
-namespace vd{
+namespace vd {
 class GameObject {
     public:
         virtual void update() = 0;

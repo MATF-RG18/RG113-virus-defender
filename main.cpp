@@ -1,18 +1,16 @@
 #include<cstdlib>
 #include <GL/glut.h>
-#include<vector>
-#include<memory>
-#include "Portal.hpp"
-#include "Virus.hpp"
-#include "EvasiveVirus.hpp"
-#include "StrongVirus.hpp"
-#include "FastVirus.hpp"
+
+#include "Game.hpp"
+
 static void on_keyboard(unsigned char key, int x, int y);
 static void on_reshape(int width, int height);
 static void on_display(void);
+static void on_timer(int value);
+static void on_passive_mouse_motion(int x, int y);
+vd::Game game;
 
-vd::Portal p;
-std::vector<std::unique_ptr<vd::Virus>> viruses;
+
 int main(int argc, char **argv)
 {
     // Initialize glut
@@ -20,7 +18,7 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
 
     // Initialize window
-    glutInitWindowSize(500, 500);
+    glutInitWindowSize(900, 900);
     glutInitWindowPosition(100, 100);
     glutCreateWindow(argv[0]);
 
@@ -28,17 +26,22 @@ int main(int argc, char **argv)
     glutKeyboardFunc(on_keyboard);
     glutReshapeFunc(on_reshape);
     glutDisplayFunc(on_display);
-
+    glutTimerFunc(game.get_msec_timer_update(), on_timer, game.get_timer_id());
+    glutPassiveMotionFunc(on_passive_mouse_motion);
     glClearColor(0, 0, 0, 0);
+   
 
-    viruses.push_back(std::make_unique<vd::EvasiveVirus>());
-    viruses.push_back(std::make_unique<vd::StrongVirus>());
-    viruses.push_back(std::make_unique<vd::FastVirus>());
-   
-   
     glutMainLoop();
 
     return 0;
+}
+
+static void on_timer(int value)
+{
+    game.update();
+    glutPostRedisplay();
+    glutTimerFunc(game.get_msec_timer_update(), on_timer, game.get_timer_id());
+    
 }
 
 static void on_keyboard(unsigned char key, int x, int y)
@@ -47,7 +50,14 @@ static void on_keyboard(unsigned char key, int x, int y)
     case 27:
         exit(0);
         break;
+    default:
+        game.set_keyboard_input(key, x, y);
     }
+}
+
+static void on_passive_mouse_motion(int x, int y)
+{
+    game.set_passive_mouse_motion_input(x,y);
 }
 
 static void on_reshape(int width, int height)
@@ -60,25 +70,6 @@ static void on_reshape(int width, int height)
 
 static void on_display(void)
 {
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    // Set up camera
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    gluLookAt(10, 10, 10, 0, 0, 0, 0, 0, 1);
-
-    // Draw white wired plane
-    glColor3f(1.0, 1.0, 1.0);
-    glBegin(GL_LINES);
-        for (GLfloat i = -3; i <= 3; i += 0.2) {
-            glVertex3f(i, 3, 0); glVertex3f(i, -3, 0);
-            glVertex3f(3, i, 0); glVertex3f(-3, i, 0);
-        }
-    glEnd();
-    p.draw();
-
-    for (auto& p: viruses) {
-        p->draw();
-    }
-    glutSwapBuffers();
+    game.draw();
+    
 }
