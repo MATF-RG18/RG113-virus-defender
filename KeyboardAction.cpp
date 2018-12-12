@@ -33,13 +33,13 @@ namespace vd {
         m_spell_caster.set_active_spell(SpellCaster::Spells::SLOW);
     }
     void KeyboardAction::on_2_down(int x,int y){
-        m_spell_caster.set_active_spell(SpellCaster::Spells::FREEZE);        
+        m_spell_caster.set_active_spell(SpellCaster::Spells::DAMAGE);        
     }
     void KeyboardAction::on_3_down(int x,int y){
-        m_spell_caster.set_active_spell(SpellCaster::Spells::AOE);             
+       
     }
     void KeyboardAction::on_4_down(int x,int y){
-        m_spell_caster.set_active_spell(SpellCaster::Spells::FREEZE);     
+    
     }
     void KeyboardAction::on_w_down(int x,int y){
         std::cerr << 'w';        

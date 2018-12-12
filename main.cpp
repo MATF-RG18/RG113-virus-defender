@@ -9,6 +9,7 @@ static void on_display(void);
 static void on_timer(int value);
 static void on_passive_mouse_motion(int x, int y);
 static void on_keyboard_up(unsigned char key, int x, int y);
+
 vd::Game game;
 
 
@@ -36,7 +37,7 @@ int main(int argc, char **argv)
     
     glutSetKeyRepeat(GLUT_KEY_REPEAT_OFF);
     glutKeyboardUpFunc(on_keyboard_up);
-
+    glEnable(GL_DEPTH_TEST);
 
     glClearColor(0, 0, 0, 0);
 

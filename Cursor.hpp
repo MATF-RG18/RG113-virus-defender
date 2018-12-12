@@ -1,12 +1,14 @@
 
 #if !defined(CURSOR_HPP)
 #define CURSOR_HPP
-
+#include "SpellCaster.hpp"
 #include<GL/glut.h>
 namespace vd {
 
 class Cursor {
     public:
+        Cursor(SpellCaster& spell_caster) 
+        : m_spell_caster(spell_caster) {}
         void set_on_screen_x(int x) {
             m_x_on_screen = x;
         }
@@ -27,6 +29,8 @@ class Cursor {
         GLfloat m_x_on_plane;
         GLfloat m_y_on_plane;
         GLuint draw_list;
+        SpellCaster& m_spell_caster;
+        
 };
 
 }

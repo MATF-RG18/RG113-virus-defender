@@ -4,16 +4,14 @@
 
 namespace vd{
     void StrongVirus::draw() {
-        m_xyz[0] = -2;
-        m_xyz[1] = -2;
-        m_xyz[2] = 0;
-        glColor3f(1,0,0);
+        glColor3f(m_color_rgb[0],m_color_rgb[1],m_color_rgb[2]);
         glPushMatrix();
             glTranslatef(m_xyz[0], m_xyz[1], m_xyz[2]);
-            glutSolidSphere(0.3, 5, 20);
+            glutSolidSphere(m_radius_size, 20, 40);
         glPopMatrix();
     }
     void StrongVirus::update() {
-
+        m_xyz[0] += m_move_xyz[0] * m_speed;
+        m_xyz[1] += m_move_xyz[1] * m_speed;
     }
 }

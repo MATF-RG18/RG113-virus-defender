@@ -1,9 +1,11 @@
 #include "Game.hpp"
 #include <GL/glut.h>
+#include "StrongVirus.hpp"
 #include<iostream>
 namespace vd {
 
-    Game::Game() : m_camera(), m_keyboard_action(m_camera, m_spell_caster),
+    Game::Game() : m_camera(), m_spell_caster(), m_keyboard_action(m_camera, m_spell_caster),
+    m_cursor(m_spell_caster),
     m_passive_mouse_motion_action(m_camera, m_window, m_cursor) {
         
     }
@@ -23,6 +25,7 @@ namespace vd {
 
         m_cursor.move(m_camera.position_point()[0], m_camera.position_point()[1],
             m_window.get_center_x(),m_window.get_center_y());
+        
         m_cursor.draw();
 
         glColor3f(3.0, 3.0, 3.0);
@@ -50,6 +53,7 @@ namespace vd {
             glTranslatef(25, 25, 2);
             glutSolidTeapot(4);
         glPopMatrix();
+        
 
         glutSwapBuffers();
 

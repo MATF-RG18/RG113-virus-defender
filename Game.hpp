@@ -10,6 +10,8 @@
 #include "Window.hpp"
 #include "Cursor.hpp"
 #include "SpellCaster.hpp"
+#include "StrongVirus.hpp"
+#include "SlowSpell.hpp"
 namespace vd{
 class Game {
 public:
@@ -32,10 +34,10 @@ private:
     const int m_timer_id = 1;
     Window m_window{1024, 768};
     Camera m_camera;
-    KeyboardAction m_keyboard_action;
-    PassiveMouseMotionAction m_passive_mouse_motion_action;
-    Cursor m_cursor;
     SpellCaster m_spell_caster;
+    KeyboardAction m_keyboard_action;
+    Cursor m_cursor;
+    PassiveMouseMotionAction m_passive_mouse_motion_action;
 };
 }
 

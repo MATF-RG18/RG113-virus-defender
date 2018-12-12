@@ -7,7 +7,7 @@ void Portal::draw() {
     glutSolidSphere(0.5, 10, 40);
 }
 void Portal::update() {
-
+    
 }
 
 }
