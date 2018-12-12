@@ -13,13 +13,18 @@ class Game {
 public:
     Game();
     void init();
+    
     void update();
     void draw();
-    void set_keyboard_input(unsigned char key, int x, int y);
-    void set_passive_mouse_motion_input(int x, int y);
+
+    
     int get_msec_timer_update() const { return m_msec_update;}
     int get_timer_id() const { return m_timer_id; }
     Window& window() { return m_window; }
+    KeyboardAction& keyboard() { return m_keyboard_action; }
+    PassiveMouseMotionAction& passive_mouse() { return m_passive_mouse_motion_action; }
+
+
 private:
     const int m_msec_update = 11;
     const int m_timer_id = 1;

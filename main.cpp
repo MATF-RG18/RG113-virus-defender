@@ -50,7 +50,8 @@ int main(int argc, char **argv)
 
 static void on_keyboard_up(unsigned char key, int x, int y)
 {
-
+    y = game.window().get_height() - y;
+    game.keyboard().key_up(key, x, y);
 }
 static void on_timer(int value)
 {
@@ -67,13 +68,15 @@ static void on_keyboard(unsigned char key, int x, int y)
         exit(0);
         break;
     default:
-        game.set_keyboard_input(key, x, y);
+        y = game.window().get_height() - y;
+        game.keyboard().key_down(key, x, y);
     }
 }
 
 static void on_passive_mouse_motion(int x, int y)
 {
-    game.set_passive_mouse_motion_input(x,y);
+    y = game.window().get_height() - y;
+    game.passive_mouse().on_move(x,y);
 }
 
 static void on_reshape(int width, int height)

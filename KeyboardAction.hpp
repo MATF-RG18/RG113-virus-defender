@@ -8,20 +8,26 @@ namespace vd {
 class KeyboardAction {
     public:
         KeyboardAction(Camera &camera) : m_camera(camera) {}
-        void operator()(unsigned key, int x, int y);
-
+        void key_down(unsigned key, int x, int y);
+        void key_up(unsigned key, int x, int y);
              
     private:
         Camera &m_camera;
 
-        void on_1(int x,int y);  
-        void on_2(int x,int y);    
-        void on_3(int x,int y);   
-        void on_4(int x,int y);   
-        void on_w(int x,int y);  
-        void on_a(int x,int y); 
-        void on_s(int x,int y);
-        void on_d(int x,int y); 
+        void on_1_down(int x,int y);  
+        void on_2_down(int x,int y);    
+        void on_3_down(int x,int y);   
+        void on_4_down(int x,int y); 
+
+        void on_w_down(int x,int y);  
+        void on_a_down(int x,int y); 
+        void on_s_down(int x,int y);
+        void on_d_down(int x,int y); 
+
+        void on_w_up(int x,int y);  
+        void on_a_up(int x,int y); 
+        void on_s_up(int x,int y);
+        void on_d_up(int x,int y); 
 };
 }
 

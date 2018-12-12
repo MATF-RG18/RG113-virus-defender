@@ -13,17 +13,10 @@ namespace vd {
     }
 
     void Game::update() {
-         std::cerr << 1;
-    }
-    void Game::set_keyboard_input(unsigned char key, int x, int y) {
-        y = m_window.get_height() - y;
-        m_keyboard_action(key, x, y);
+        //  std::cerr << 1;
     }
 
-    void Game::set_passive_mouse_motion_input(int x, int y) {
-        y = m_window.get_height() - y;
-        m_passive_mouse_motion_action(x,y);
-    }
+
 
     void Game::draw() {
         glClear(GL_DEPTH_BUFFER_BIT|GL_COLOR_BUFFER_BIT);

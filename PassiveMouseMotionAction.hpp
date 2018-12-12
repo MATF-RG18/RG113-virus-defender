@@ -9,7 +9,7 @@ class PassiveMouseMotionAction {
     public:
         PassiveMouseMotionAction(Camera &camera, Window& window) : m_camera(camera), m_window(window) {}
 
-        void operator()(int x, int y);
+        void on_move(int x, int y);
         
     private:
         Camera& m_camera;
