@@ -30,18 +30,16 @@ namespace vd {
     }
 
     void KeyboardAction::on_1_down(int x,int y){
-        std::cerr << '1';
+        m_spell_caster.set_active_spell(SpellCaster::Spells::SLOW);
     }
     void KeyboardAction::on_2_down(int x,int y){
-        std::cerr << '2';        
+        m_spell_caster.set_active_spell(SpellCaster::Spells::FREEZE);        
     }
     void KeyboardAction::on_3_down(int x,int y){
-        std::cerr << '3';        
-        
+        m_spell_caster.set_active_spell(SpellCaster::Spells::AOE);             
     }
     void KeyboardAction::on_4_down(int x,int y){
-        std::cerr << '4';        
-        
+        m_spell_caster.set_active_spell(SpellCaster::Spells::FREEZE);     
     }
     void KeyboardAction::on_w_down(int x,int y){
         std::cerr << 'w';        

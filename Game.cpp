@@ -3,29 +3,28 @@
 #include<iostream>
 namespace vd {
 
-    Game::Game() : m_camera(), m_keyboard_action(m_camera),
-    m_passive_mouse_motion_action(m_camera, m_window) {
+    Game::Game() : m_camera(), m_keyboard_action(m_camera, m_spell_caster),
+    m_passive_mouse_motion_action(m_camera, m_window, m_cursor) {
         
     }
 
     void Game::init() {
-
+        m_cursor.init();
     }
 
     void Game::update() {
-        //  std::cerr << 1;
+        
     }
-
-
 
     void Game::draw() {
         glClear(GL_DEPTH_BUFFER_BIT|GL_COLOR_BUFFER_BIT);
-        // Set up camera
-        // glMatrixMode(GL_MODELVIEW);
-        // glLoadIdentity();
-        // gluLookAt(10, 10, 10, 0, 0, 0, 0, 0, 1);
+
         m_camera.setup();
-        // Draw white wired plane
+
+        m_cursor.move(m_camera.position_point()[0], m_camera.position_point()[1],
+            m_window.get_center_x(),m_window.get_center_y());
+        m_cursor.draw();
+
         glColor3f(3.0, 3.0, 3.0);
         glBegin(GL_POLYGON);
             glVertex3f(0,0,0);
@@ -51,6 +50,7 @@ namespace vd {
             glTranslatef(25, 25, 2);
             glutSolidTeapot(4);
         glPopMatrix();
+
         glutSwapBuffers();
 
     }

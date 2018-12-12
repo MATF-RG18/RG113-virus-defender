@@ -32,16 +32,24 @@ namespace vd{
             void stop_moving_east();
             void stop_moving_west();
             void stop_moving_south();
+
+            const GLfloat (&pointing_vector())[3]  { return m_camera_pointing_vector; }
+            const GLfloat (&position_point())[3]  { return m_xyz_position; }
+            const GLfloat (&eye_point())[3]  { return m_xyz_eye; }
+
+
         private:
             GLfloat m_xyz_eye[3];
             GLfloat m_xyz_position[3];
             GLfloat m_xyz_up[3];
             GLfloat m_move_direction[3];
-            
+
+            const GLfloat m_camera_pointing_vector[3] = {15, 15, -20};
+
             const GLfloat m_z_eye = 20;
             const GLfloat m_z_position = 0;
        
-
+            
             
             struct MovmentVectors {
             private:

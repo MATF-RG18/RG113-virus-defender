@@ -8,6 +8,8 @@
 #include "KeyboardAction.hpp"
 #include "PassiveMouseMotionAction.hpp"
 #include "Window.hpp"
+#include "Cursor.hpp"
+#include "SpellCaster.hpp"
 namespace vd{
 class Game {
 public:
@@ -32,7 +34,8 @@ private:
     Camera m_camera;
     KeyboardAction m_keyboard_action;
     PassiveMouseMotionAction m_passive_mouse_motion_action;
-    
+    Cursor m_cursor;
+    SpellCaster m_spell_caster;
 };
 }
 

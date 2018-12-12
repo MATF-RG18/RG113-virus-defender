@@ -7,8 +7,12 @@ Camera::Camera() {
     m_xyz_eye[1] = 10;
     m_xyz_eye[2] = m_z_eye;
 
-    m_xyz_position[0] = m_xyz_eye[0] + 15;
-    m_xyz_position[1] = m_xyz_eye[1] + 15;
+    // m_xyz_position[0] = m_xyz_eye[0] + 15;
+    // m_xyz_position[1] = m_xyz_eye[1] + 15;
+
+    m_xyz_position[0] = m_xyz_eye[0] + m_camera_pointing_vector[0];
+    m_xyz_position[1] = m_xyz_eye[1] + m_camera_pointing_vector[1];
+
     m_xyz_position[2] = m_z_position;
 
     // m_xyz_up[0] = m_xyz_position[0];
@@ -78,7 +82,12 @@ void Camera::setup() {
             m_xyz_position[1],
             m_xyz_position[2],
             50,50, 25);
-
+    
+    glPushMatrix();
+        glColor3f(1,0,0);
+        glTranslatef(m_xyz_position[0], m_xyz_position[1], 1);
+        glutSolidSphere(1, 10, 40);
+    glPopMatrix();
 }
 
 }
