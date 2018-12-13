@@ -2,6 +2,7 @@
 
 #if !defined(GAMEOBJECT_HPP)
 #define GAMEOBJECT_HPP
+#include<iostream>
 #include<GL/glut.h>
 namespace vd {
 class GameObject {
@@ -11,8 +12,14 @@ class GameObject {
         virtual void update() = 0;
         virtual void draw() = 0;
         virtual ~GameObject() = default;
+        void activate() { m_active = true;}
+        bool is_active() { return m_active; }
+        void deactivate() { m_active = false; }
     protected:
         GLfloat m_xyz[3];
+        
+    private:
+        bool m_active = false;
 };
 
 }

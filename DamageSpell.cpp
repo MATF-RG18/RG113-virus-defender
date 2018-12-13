@@ -32,7 +32,15 @@ void DamageSpell::draw()
 
 void DamageSpell::update()
 {
-    --m_duration_ticks;
+    if (!is_active())
+        return;
+
+    if (m_duration_ticks >= 0) {
+        --m_duration_ticks;
+    }
+    else {
+        deactivate();
+    }
 }
 
 

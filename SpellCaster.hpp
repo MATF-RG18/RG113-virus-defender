@@ -4,6 +4,7 @@
 
 #include "SlowSpell.hpp"
 #include "DamageSpell.hpp"
+#include "GridController.hpp"
 #include<GL/glut.h>
 
 namespace vd {
@@ -14,21 +15,31 @@ class SpellCaster {
         enum class Spells {
             DEFAULT = 0, SLOW = 1, DAMAGE = 2
         };
-        SpellCaster() : m_active_spell(&m_slow_spell){}
+        
+        SpellCaster(GridController& grid) : m_active_spell(&m_slow_spell), m_grid(grid), m_indicator(Spells::SLOW){}
         void set_active_spell(Spells spell) { 
+            m_indicator = spell;
             if (spell == Spells::SLOW)
                 m_active_spell = &m_slow_spell;
             else if (spell == Spells::DAMAGE)
                 m_active_spell = &m_damage_spell;
         }
         Spell& get_active_spell() const { return *m_active_spell; }
-
+        void cast_active_spell() {
+            if (m_indicator == Spells::SLOW) {
+                m_grid.cast_spell(m_slow_spell);
+            } else if (m_indicator == Spells::DAMAGE) {
+                m_grid.cast_spell(m_damage_spell);
+            }
+        }
         void set_x(GLfloat x) {m_active_spell->set_x(x); }
         void set_y(GLfloat y) {m_active_spell->set_y(y); }
     private:
         SlowSpell m_slow_spell;
         DamageSpell m_damage_spell;
         Spell* m_active_spell;
+        GridController& m_grid;
+        Spells m_indicator;
 };
 
 

@@ -42,37 +42,37 @@ namespace vd {
     
     }
     void KeyboardAction::on_w_down(int x,int y){
-        std::cerr << 'w';        
+        // std::cerr << 'w';        
         m_camera.start_moving_north();
     }
     void KeyboardAction::on_a_down(int x,int y){
-        std::cerr << 'a';        
+        // std::cerr << 'a';        
         m_camera.start_moving_west();
     }
     void KeyboardAction::on_s_down(int x,int y){
-        std::cerr << 's';   
+        // std::cerr << 's';   
         m_camera.start_moving_south();         
     }
     void KeyboardAction::on_d_down(int x,int y){
-        std::cerr << 'd';        
+        // std::cerr << 'd';        
         m_camera.start_moving_east();
       
     }
 
     void KeyboardAction::on_w_up(int x,int y){
-        std::cerr << 'w';        
+        // std::cerr << 'w';        
         m_camera.stop_moving_north();
     }
     void KeyboardAction::on_a_up(int x,int y){
-        std::cerr << 'a';  
+        // std::cerr << 'a';  
         m_camera.stop_moving_west();      
     }
     void KeyboardAction::on_s_up(int x,int y){
-        std::cerr << 's';      
+        // std::cerr << 's';      
         m_camera.stop_moving_south();      
     }
     void KeyboardAction::on_d_up(int x,int y){
-        std::cerr << 'd';        
+        // std::cerr << 'd';        
         m_camera.stop_moving_east();
     }
 

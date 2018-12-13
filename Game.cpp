@@ -4,9 +4,10 @@
 #include<iostream>
 namespace vd {
 
-    Game::Game() : m_camera(), m_spell_caster(), m_keyboard_action(m_camera, m_spell_caster),
+    Game::Game() : m_camera(), m_spell_caster(m_grid_controller), m_keyboard_action(m_camera, m_spell_caster),
     m_cursor(m_spell_caster),
-    m_passive_mouse_motion_action(m_camera, m_window, m_cursor) {
+    m_passive_mouse_motion_action(m_camera, m_window, m_cursor),
+    m_mouse_action(m_cursor) {
         
     }
 
@@ -15,7 +16,7 @@ namespace vd {
     }
 
     void Game::update() {
-        
+        m_grid_controller.update();
     }
 
     void Game::draw() {
@@ -54,7 +55,7 @@ namespace vd {
             glutSolidTeapot(4);
         glPopMatrix();
         
-
+        m_grid_controller.draw();
         glutSwapBuffers();
 
     }

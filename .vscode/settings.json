@@ -33,6 +33,7 @@
         "utility": "cpp",
         "new": "cpp",
         "optional": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "bitset": "cpp"
     }
 }

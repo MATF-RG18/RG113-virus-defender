@@ -12,6 +12,8 @@
 #include "SpellCaster.hpp"
 #include "StrongVirus.hpp"
 #include "SlowSpell.hpp"
+#include "Timer.hpp"
+#include "MouseAction.hpp"
 namespace vd{
 class Game {
 public:
@@ -24,20 +26,25 @@ public:
     
     int get_msec_timer_update() const { return m_msec_update;}
     int get_timer_id() const { return m_timer_id; }
+    Timer& timer() { return m_timer; }
     Window& window() { return m_window; }
     KeyboardAction& keyboard() { return m_keyboard_action; }
     PassiveMouseMotionAction& passive_mouse() { return m_passive_mouse_motion_action; }
-
+    MouseAction& mouse_action() { return m_mouse_action; }
 
 private:
-    const int m_msec_update = 11;
+    const int m_msec_update = 13;
     const int m_timer_id = 1;
+    GridController m_grid_controller;
     Window m_window{1024, 768};
     Camera m_camera;
     SpellCaster m_spell_caster;
     KeyboardAction m_keyboard_action;
     Cursor m_cursor;
+    Timer m_timer{13, 1};
     PassiveMouseMotionAction m_passive_mouse_motion_action;
+    MouseAction m_mouse_action;
+    
 };
 }
 

@@ -19,6 +19,12 @@ class Spell : public GameObject {
         void set_x(GLfloat x) { m_xyz[0] = x; }
         void set_y(GLfloat y) { m_xyz[1] = y; }
         void set_z(GLfloat z) { m_xyz[2] = z; } 
+        
+        GLfloat get_x() const {return m_xyz[0];}
+        GLfloat get_y() const {return m_xyz[1];}
+        GLfloat get_z() const {return m_xyz[2];}
+
+       
     protected:
         int m_duration_ticks;
         GLfloat m_radius;
