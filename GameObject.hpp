@@ -4,6 +4,7 @@
 #define GAMEOBJECT_HPP
 #include<iostream>
 #include<GL/glut.h>
+
 namespace vd {
 class GameObject {
     public:

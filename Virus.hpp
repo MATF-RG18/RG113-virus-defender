@@ -6,6 +6,7 @@
 #include "GameObject.hpp"
 #include "Portal.hpp"
 #include "Math.hpp"
+
 namespace vd {
 class Virus : public GameObject{
     public:
@@ -27,9 +28,7 @@ class Virus : public GameObject{
         }
         void attack();
         void reset_speed() { m_speed = 1; }
-        bool colides_with(const Portal& p)  {
-            return Math::distance(m_xyz[0], m_xyz[1], m_xyz[2], p.get_x(), p.get_y(), p.get_z()) < p.get_radius();
-        }
+        
     protected:
         GLfloat m_hp;
         GLfloat m_speed;

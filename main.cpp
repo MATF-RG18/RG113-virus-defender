@@ -53,7 +53,7 @@ static void on_keyboard_up(unsigned char key, int x, int y)
     y = game.window().get_height() - y;
     game.keyboard().key_up(key, x, y);
 }
-static void on_timer(int value)
+static void on_timer(int)
 {
     game.update();
     glutPostRedisplay();

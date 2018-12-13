@@ -14,6 +14,7 @@ class SlowSpell : public Spell {
         }
         void draw() override;
         void update() override;
+        void applay(Virus& v) override;
     
 };
 

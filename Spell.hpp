@@ -14,7 +14,10 @@ class Spell : public GameObject {
     public:
         Spell(GLfloat x, GLfloat y, GLfloat z,
         int duration_ticks, GLfloat radius) : GameObject(x,y,z),
-        m_duration_ticks(duration_ticks), m_radius(radius) {}
+        m_duration_ticks(duration_ticks), m_radius(radius) {
+            m_xyz[2] = 0.02;
+        }
+
         int get_duration_ticks() const { return m_duration_ticks; }
         void set_x(GLfloat x) { m_xyz[0] = x; }
         void set_y(GLfloat y) { m_xyz[1] = y; }
@@ -23,7 +26,8 @@ class Spell : public GameObject {
         GLfloat get_x() const {return m_xyz[0];}
         GLfloat get_y() const {return m_xyz[1];}
         GLfloat get_z() const {return m_xyz[2];}
-
+        GLfloat get_radius() const { return m_radius; }
+        virtual void applay(Virus& v) = 0;
        
     protected:
         int m_duration_ticks;

@@ -29,49 +29,49 @@ namespace vd {
         }
     }
 
-    void KeyboardAction::on_1_down(int x,int y){
+    void KeyboardAction::on_1_down(int ,int ){
         m_spell_caster.set_active_spell(SpellCaster::Spells::SLOW);
     }
-    void KeyboardAction::on_2_down(int x,int y){
+    void KeyboardAction::on_2_down(int ,int ){
         m_spell_caster.set_active_spell(SpellCaster::Spells::DAMAGE);        
     }
-    void KeyboardAction::on_3_down(int x,int y){
+    void KeyboardAction::on_3_down(int ,int ){
        
     }
-    void KeyboardAction::on_4_down(int x,int y){
+    void KeyboardAction::on_4_down(int ,int ){
     
     }
-    void KeyboardAction::on_w_down(int x,int y){
+    void KeyboardAction::on_w_down(int ,int ){
         // std::cerr << 'w';        
         m_camera.start_moving_north();
     }
-    void KeyboardAction::on_a_down(int x,int y){
+    void KeyboardAction::on_a_down(int ,int ){
         // std::cerr << 'a';        
         m_camera.start_moving_west();
     }
-    void KeyboardAction::on_s_down(int x,int y){
+    void KeyboardAction::on_s_down(int ,int ){
         // std::cerr << 's';   
         m_camera.start_moving_south();         
     }
-    void KeyboardAction::on_d_down(int x,int y){
+    void KeyboardAction::on_d_down(int ,int ){
         // std::cerr << 'd';        
         m_camera.start_moving_east();
       
     }
 
-    void KeyboardAction::on_w_up(int x,int y){
+    void KeyboardAction::on_w_up(int ,int ){
         // std::cerr << 'w';        
         m_camera.stop_moving_north();
     }
-    void KeyboardAction::on_a_up(int x,int y){
+    void KeyboardAction::on_a_up(int ,int){
         // std::cerr << 'a';  
         m_camera.stop_moving_west();      
     }
-    void KeyboardAction::on_s_up(int x,int y){
+    void KeyboardAction::on_s_up(int ,int ){
         // std::cerr << 's';      
         m_camera.stop_moving_south();      
     }
-    void KeyboardAction::on_d_up(int x,int y){
+    void KeyboardAction::on_d_up(int ,int ){
         // std::cerr << 'd';        
         m_camera.stop_moving_east();
     }

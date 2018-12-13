@@ -46,6 +46,15 @@ class GridController {
         void update_factories();
         void applay_spells();
         void update_viruses();
+        void update_collisions();
+
+        bool colides(const Virus& v, const Portal& p)  {
+            return Math::distance(v.get_x(), v.get_y(), v.get_z(), p.get_x(), p.get_y(), p.get_z()) < p.get_radius();
+        }
+        bool colides(const Spell& s, const Virus& v) {
+            return v.get_x() > (s.get_x() - s.get_radius()) && v.get_x() < (s.get_x() + s.get_radius()) &&
+            v.get_y() > (s.get_y() - s.get_radius()) && v.get_y() < (s.get_y() + s.get_radius());
+        }
 
 };
 

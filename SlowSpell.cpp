@@ -28,6 +28,11 @@ GLfloat r, GLfloat g, GLfloat b, GLfloat radius)
     glPopMatrix();
 }
 
+void SlowSpell::applay(Virus& v) 
+{
+    v.set_speed(v.get_speed() * 0.7);
+}
+
 void SlowSpell::draw()
 {
     draw_slow_spell(m_xyz[0], m_xyz[1], m_xyz[2],

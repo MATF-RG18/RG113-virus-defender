@@ -2,13 +2,13 @@
 #if !defined(DAMAGESPELL_HPP)
 #define DAMAGESPELL_HPP
 
-
+#include "Virus.hpp"
 #include "Spell.hpp"
 namespace vd{
 
 class DamageSpell : public Spell {
     public:
-        DamageSpell(GLfloat x = 0, GLfloat y=0, GLfloat z=0.1) : Spell(x,y,z,
+        DamageSpell(GLfloat x = 0, GLfloat y=0, GLfloat z=0) : Spell(x,y,z,
         120, 1.8) {
             m_color_rgb[0] = 1;
             m_color_rgb[1] = 0.3;
@@ -16,6 +16,9 @@ class DamageSpell : public Spell {
         }
         void draw() override;
         void update() override;
+        void applay(Virus &v) override;
+    private:
+        constexpr static GLfloat m_damage_per_tick{ 1};
 };
 
 }

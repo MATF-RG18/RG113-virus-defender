@@ -29,6 +29,10 @@ void DamageSpell::draw()
 
     glPopMatrix();
 }
+void DamageSpell::applay(Virus &v)
+{
+    v.set_hp(v.get_hp() - m_damage_per_tick);
+}
 
 void DamageSpell::update()
 {

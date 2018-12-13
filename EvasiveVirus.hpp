@@ -7,8 +7,8 @@
 namespace vd {
 class EvasiveVirus : public Virus {
     public:
-        EvasiveVirus(GLfloat x = 0, GLfloat y = 0, GLfloat z= 0) : Virus(x,y,z,
-        HP, SPEED, RADIUS) {
+        EvasiveVirus(GLfloat x = 0, GLfloat y = 0, GLfloat z = 0) : 
+        Virus(x,y, z, HP, SPEED, RADIUS) {
                 set_color(1, 0, 0);
         }
         void draw() override;
