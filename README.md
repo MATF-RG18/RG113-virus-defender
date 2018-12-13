@@ -32,4 +32,4 @@ Magije je stakuju.
 
 Kada virus udje u range bacene magije magija deluje na njega.
 
-Odbrani portal!
+Odbrani portal! :)
