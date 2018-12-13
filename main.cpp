@@ -9,7 +9,7 @@ static void on_timer(int value);
 static void on_passive_mouse_motion(int x, int y);
 static void on_keyboard_up(unsigned char key, int x, int y);
 static void on_mouse_click(int button, int state, int x, int y);
-
+static void on_mouse_motion(int x, int y);
 vd::Game game;
 
 int main(int argc, char **argv)
@@ -34,6 +34,7 @@ int main(int argc, char **argv)
     glutTimerFunc(game.timer().get_msec_update(), on_timer, game.timer().get_timer_id());
     glutPassiveMotionFunc(on_passive_mouse_motion);
     glutMouseFunc(on_mouse_click);
+    glutMotionFunc(on_mouse_motion);
     glutSetKeyRepeat(GLUT_KEY_REPEAT_OFF);
     glutKeyboardUpFunc(on_keyboard_up);
     glEnable(GL_DEPTH_TEST);
@@ -47,6 +48,11 @@ int main(int argc, char **argv)
     return 0;
 }
 
+static void on_mouse_motion(int x, int y)
+{
+    y = game.window().get_height() - y;
+    game.passive_mouse().on_move(x,y);
+}
 
 static void on_keyboard_up(unsigned char key, int x, int y)
 {
@@ -65,9 +71,9 @@ static void on_timer(int)
 static void on_mouse_click(int button, int state, int , int )
 {
     // y = game.window().get_height() - y;
-    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+    if (button == GLUT_LEFT_BUTTON && state == GLUT_UP)
         game.mouse_action().on_left_click_down();
-    else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
+    else if (button == GLUT_RIGHT_BUTTON && state == GLUT_UP)
         game.mouse_action().on_right_click_down();
 }
 
