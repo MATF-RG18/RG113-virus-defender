@@ -37,23 +37,8 @@ namespace vd {
             glVertex3f(50, 0, 0);
         glEnd();
 
-        glPushMatrix();
-            glColor3f(1,1,0);
-            glTranslatef(20, 20, 2);
-            glutSolidSphere(2, 10, 30);
-        glPopMatrix();
+ 
 
-        glPushMatrix();
-            glColor3f(1,0,0);
-            glTranslatef(10, 40, 2);
-            glutSolidSphere(2, 10, 30);
-        glPopMatrix();
-
-        glPushMatrix();
-            glColor3f(0,0,1);
-            glTranslatef(25, 25, 2);
-            glutSolidTeapot(4);
-        glPopMatrix();
         
         m_grid_controller.draw();
         glutSwapBuffers();

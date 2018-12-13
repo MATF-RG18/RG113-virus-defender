@@ -1,6 +1,5 @@
 #include<cstdlib>
 #include <GL/glut.h>
-
 #include "Game.hpp"
 
 static void on_keyboard(unsigned char key, int x, int y);
@@ -10,8 +9,8 @@ static void on_timer(int value);
 static void on_passive_mouse_motion(int x, int y);
 static void on_keyboard_up(unsigned char key, int x, int y);
 static void on_mouse_click(int button, int state, int x, int y);
-vd::Game game;
 
+vd::Game game;
 
 int main(int argc, char **argv)
 {

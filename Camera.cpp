@@ -83,11 +83,7 @@ void Camera::setup() {
             m_xyz_position[2],
             50,50, 25);
     
-    glPushMatrix();
-        glColor3f(1,0,0);
-        glTranslatef(m_xyz_position[0], m_xyz_position[1], 1);
-        glutSolidSphere(1, 10, 40);
-    glPopMatrix();
+
 }
 
 }

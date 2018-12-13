@@ -5,6 +5,7 @@
 
 #include "GameObject.hpp"
 #include "Portal.hpp"
+
 namespace vd {
 class Virus : public GameObject{
     public:

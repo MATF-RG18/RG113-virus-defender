@@ -13,7 +13,6 @@ class EvasiveVirus : public Virus {
         }
         void draw() override;
         void update() override;
-
     private:
         static constexpr GLfloat HP {100};
         static constexpr GLfloat RADIUS{0.1};

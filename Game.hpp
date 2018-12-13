@@ -23,7 +23,7 @@ public:
     void update();
     void draw();
 
-    
+    void test() { std::cerr << "hello world";}
     int get_msec_timer_update() const { return m_msec_update;}
     int get_timer_id() const { return m_timer_id; }
     Timer& timer() { return m_timer; }

@@ -10,6 +10,9 @@
 #include "SlowSpell.hpp"
 #include "DamageSpell.hpp"
 #include "VirusFactory.hpp"
+#include "StrongVirus.hpp"
+#include "EvasiveVirus.hpp"
+#include "FastVirus.hpp"
 #include<bitset>
 namespace vd{
 
@@ -34,6 +37,11 @@ class GridController {
         GameObjectContainer<FastVirus, MAX_VIRUSES> m_fast_viruses;
         GameObjectContainer<EvasiveVirus, MAX_VIRUSES> m_evasive_viruses;
        
+        std::vector<VirusFactory<StrongVirus>> m_strong_virus_factories;
+        std::vector<VirusFactory<EvasiveVirus>> m_evasive_virus_factories;
+        std::vector<VirusFactory<FastVirus>> m_fast_virus_factories;
+        
+        void update_factories();
 
 };
 
