@@ -3,14 +3,20 @@ Virus defender
 
 # Kontrole:
 ## Kretanje kamere po mapi:
+
 W - NORTH
+
 A - WEST
+
 S - SOUTH
+
 D - EAST
 
 ## Magije:
 1 - SLOW
+
 2 - DAMAGE
+
 
 ## HOW TO:
 Na sredini se nalazi zeleni portal. Sa strane se stvaraju razlicite vrste virusa koji idu ka njemu.
