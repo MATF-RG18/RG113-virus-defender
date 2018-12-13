@@ -2,7 +2,7 @@
 Virus defender
 
 # Kontrole:
-##Kretanje kamere po mapi:
+## Kretanje kamere po mapi:
 W - NORTH
 A - WEST
 S - SOUTH
