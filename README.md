@@ -17,6 +17,9 @@ D - EAST
 
 2 - DAMAGE
 
+LEFT_CLICK - privermeni spell, kosta MANE
+RIGHT_CLICK - perma spell, kosta PLASMA koja se dobija od ubijanja virusa
+
 
 ## HOW TO:
 Na sredini se nalazi zeleni portal. Sa strane se stvaraju razlicite vrste virusa koji idu ka njemu.
