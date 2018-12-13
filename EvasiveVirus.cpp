@@ -12,14 +12,8 @@ namespace vd{
         glPopMatrix();
     }
     void EvasiveVirus::update() {
-        if (m_hp <= 0) {
-            deactivate();
-            return;
-        }
-       
-        m_xyz[0] += m_move_xyz[0] * m_speed;
-        m_xyz[1] += m_move_xyz[1] * m_speed;
-        m_speed = SPEED;
+        Virus::update();
+        m_speed = SPEED; 
 
     }
 }

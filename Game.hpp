@@ -14,6 +14,8 @@
 #include "SlowSpell.hpp"
 #include "Timer.hpp"
 #include "MouseAction.hpp"
+#include "GameVariables.hpp"
+
 namespace vd{
 class Game {
 public:
@@ -31,6 +33,7 @@ public:
     KeyboardAction& keyboard() { return m_keyboard_action; }
     PassiveMouseMotionAction& passive_mouse() { return m_passive_mouse_motion_action; }
     MouseAction& mouse_action() { return m_mouse_action; }
+    bool not_over() { return GameVariables::PORTAL_HP > 0; }
 
 private:
     const int m_msec_update = 13;

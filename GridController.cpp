@@ -46,10 +46,6 @@ void GridController::applay_spells()
                     s.applay(v);
                 }
             }
-            for (auto &v : m_evasive_viruses) {
-                if (v.is_active() && colides(s,v))
-                    s.applay(v);
-            }
             for (auto &v : m_fast_viruses) {
                 if (v.is_active() && colides(s,v))
                     s.applay(v);

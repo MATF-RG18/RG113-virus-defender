@@ -13,12 +13,12 @@ namespace vd{
 class Spell : public GameObject {
     public:
         Spell(GLfloat x, GLfloat y, GLfloat z,
-        int duration_ticks, GLfloat radius) : GameObject(x,y,z),
+        long long duration_ticks, GLfloat radius) : GameObject(x,y,z),
         m_duration_ticks(duration_ticks), m_radius(radius) {
             m_xyz[2] = 0.02;
         }
 
-        int get_duration_ticks() const { return m_duration_ticks; }
+        long long get_duration_ticks() const { return m_duration_ticks; }
         void set_x(GLfloat x) { m_xyz[0] = x; }
         void set_y(GLfloat y) { m_xyz[1] = y; }
         void set_z(GLfloat z) { m_xyz[2] = z; } 
@@ -28,9 +28,10 @@ class Spell : public GameObject {
         GLfloat get_z() const {return m_xyz[2];}
         GLfloat get_radius() const { return m_radius; }
         virtual void applay(Virus& v) = 0;
-       
+        virtual void set_normal_spell() = 0;
+        void set_perma_spell() { m_duration_ticks = GameVariables::INF_TIME_TICKS; }
     protected:
-        int m_duration_ticks;
+        long long m_duration_ticks;
         GLfloat m_radius;
         GLfloat m_color_rgb[3];
 };

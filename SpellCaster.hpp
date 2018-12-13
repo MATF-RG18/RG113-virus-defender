@@ -25,12 +25,26 @@ class SpellCaster {
                 m_active_spell = &m_damage_spell;
         }
         Spell& get_active_spell() const { return *m_active_spell; }
+
         void cast_active_spell() {
+            m_active_spell->set_normal_spell();
             if (m_indicator == Spells::SLOW) {
                 m_grid.cast_spell(m_slow_spell);
             } else if (m_indicator == Spells::DAMAGE) {
                 m_grid.cast_spell(m_damage_spell);
             }
+        }
+        void cast_active_perma_spell() {
+            if (GameVariables::PERMA_SPELL_WORTH <= GameVariables::PLASMA) {
+                m_active_spell->set_perma_spell();
+                GameVariables::PLASMA -= GameVariables::PERMA_SPELL_WORTH;
+                if (m_indicator == Spells::SLOW) {
+                    m_grid.cast_spell(m_slow_spell);
+                } else if (m_indicator == Spells::DAMAGE) {
+                    m_grid.cast_spell(m_damage_spell);
+                }
+            }
+            
         }
         void set_x(GLfloat x) {m_active_spell->set_x(x); }
         void set_y(GLfloat y) {m_active_spell->set_y(y); }

@@ -22,6 +22,9 @@ class Cursor {
         void cast_spell() {
             m_spell_caster.cast_active_spell();
         }
+        void cast_perma_spell() {
+            m_spell_caster.cast_active_perma_spell();
+        }
         void draw();
         int get_on_screen_x() const { return m_x_on_screen; }
         int gey_on_screen_y() const { return m_y_on_screen; }

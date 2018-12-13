@@ -55,17 +55,20 @@ static void on_keyboard_up(unsigned char key, int x, int y)
 }
 static void on_timer(int)
 {
-    game.update();
-    glutPostRedisplay();
-    glutTimerFunc(game.timer().get_msec_update(), on_timer, game.timer().get_timer_id());
-    
+    if (game.not_over()) {
+        game.update();
+        glutPostRedisplay();
+        glutTimerFunc(game.timer().get_msec_update(), on_timer, game.timer().get_timer_id());
+    }
 }
 
-static void on_mouse_click(int button, int state, int x, int y)
+static void on_mouse_click(int button, int state, int , int )
 {
-    y = game.window().get_height() - y;
+    // y = game.window().get_height() - y;
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
-        game.mouse_action().on_left_click_down(x, y);
+        game.mouse_action().on_left_click_down();
+    else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
+        game.mouse_action().on_right_click_down();
 }
 
 static void on_keyboard(unsigned char key, int x, int y)

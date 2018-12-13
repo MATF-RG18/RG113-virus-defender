@@ -2,6 +2,7 @@
 #include <GL/glut.h>
 #include "StrongVirus.hpp"
 #include<iostream>
+
 namespace vd {
 
     Game::Game() : m_camera(), m_spell_caster(m_grid_controller), m_keyboard_action(m_camera, m_spell_caster),
