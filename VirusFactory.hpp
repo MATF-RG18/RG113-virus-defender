@@ -4,6 +4,7 @@
 #include<GL/glut.h>
 #include<vector>
 #include "GridController.hpp"
+#include "Portal.hpp"
 namespace vd {
 
 template<typename T>
@@ -31,6 +32,7 @@ class VirusFactory {
         const int m_update_tick;
         int m_remaning_ticks;
         T m_virus;
+
 };
 
 template<typename T>

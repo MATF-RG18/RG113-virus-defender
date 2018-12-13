@@ -12,9 +12,13 @@ class GameObject {
         virtual void update() = 0;
         virtual void draw() = 0;
         virtual ~GameObject() = default;
-        void activate() { m_active = true;}
+        virtual void activate() { m_active = true;}
         bool is_active() { return m_active; }
-        void deactivate() { m_active = false; }
+        virtual void deactivate() { m_active = false; }
+        GLfloat get_x() const { return m_xyz[0]; }
+        GLfloat get_y() const { return m_xyz[1]; }
+        GLfloat get_z() const { return m_xyz[2]; }
+
     protected:
         GLfloat m_xyz[3];
         

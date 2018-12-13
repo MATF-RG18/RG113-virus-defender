@@ -11,6 +11,7 @@ namespace vd{
         glPopMatrix();
     }
     void FastVirus::update() {
-
+        m_xyz[0] += m_move_xyz[0] * m_speed;
+        m_xyz[1] += m_move_xyz[1] * m_speed;
     }
 }

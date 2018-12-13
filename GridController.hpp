@@ -13,10 +13,11 @@
 #include "StrongVirus.hpp"
 #include "EvasiveVirus.hpp"
 #include "FastVirus.hpp"
-#include<bitset>
+#include "Portal.hpp"
 namespace vd{
 
 class GridController {
+
     public:
         GridController();
         void cast_spell(const SlowSpell& spell) {
@@ -41,9 +42,13 @@ class GridController {
         std::vector<VirusFactory<EvasiveVirus>> m_evasive_virus_factories;
         std::vector<VirusFactory<FastVirus>> m_fast_virus_factories;
         
+        Portal m_portal;
         void update_factories();
+        void applay_spells();
+        void update_viruses();
 
 };
+
 
 }
 

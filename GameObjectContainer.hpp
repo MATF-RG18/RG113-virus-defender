@@ -40,8 +40,6 @@ void GameObjectContainer<T,N>::insert(const T& object)
             return;
         }
     }
-    
-    
 }
 template<typename T, size_t N>
 void GameObjectContainer<T,N>::draw()

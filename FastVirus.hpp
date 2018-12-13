@@ -7,7 +7,7 @@ namespace vd {
    class FastVirus : public Virus {
       public:
             FastVirus(GLfloat x =0 , GLfloat y=0, GLfloat z=0) : Virus(x,y,z,
-            HP, RADIUS, SPEED) {
+            HP, SPEED, RADIUS) {
                 set_color(0, 1, 0);
             }
             void draw() override;
@@ -15,7 +15,7 @@ namespace vd {
       private:
          static constexpr GLfloat HP {400};
          static constexpr GLfloat RADIUS{0.2};
-         static constexpr GLfloat SPEED{ 0.6};
+         static constexpr GLfloat SPEED{ 0.08};
 }; 
 }
 
