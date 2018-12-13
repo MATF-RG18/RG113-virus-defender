@@ -4,8 +4,8 @@ namespace vd {
 
 GridController::GridController()
 {
-    m_strong_virus_factories.emplace_back(3, 34, 34, 0.1);
-    m_evasive_virus_factories.emplace_back(3, 15, 15, 0.1);
+    // m_strong_virus_factories.emplace_back(3, 34, 34, 0.1);
+    // m_evasive_virus_factories.emplace_back(3, 15, 15, 0.1);
     m_fast_virus_factories.emplace_back(3, 42, 5, 0.1);
 }
 
@@ -19,7 +19,28 @@ void GridController::update_viruses()
     m_evasive_viruses.update();
     m_fast_viruses.update();
 
+    for (auto &f: m_strong_viruses) {
+        if (f.is_active() && f.colides_with(m_portal)) {
+            m_portal.take_damage(f.get_hp());
+            f.deactivate();
+        }
+    }
+    for (auto &f: m_fast_viruses) {
+        if (f.is_active() && f.colides_with(m_portal)) {
+            m_portal.take_damage(f.get_hp());
+            f.deactivate();
+        }
+    }
+    for (auto &f: m_evasive_viruses) {
+        if (f.is_active() && f.colides_with(m_portal)) {
+            m_portal.take_damage(f.get_hp());
+            f.deactivate();
+        }
+    }
+
 }
+
+
 
 void GridController::update_factories()
 {
@@ -55,7 +76,7 @@ void GridController::update() {
 
 
     update_viruses();
-    
+
     update_factories();
     m_portal.update();
 }

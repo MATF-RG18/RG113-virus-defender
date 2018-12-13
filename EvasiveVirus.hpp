@@ -16,7 +16,7 @@ class EvasiveVirus : public Virus {
     private:
         static constexpr GLfloat HP {100};
         static constexpr GLfloat RADIUS{0.1};
-        static constexpr GLfloat SPEED{ 0.04};
+        static constexpr GLfloat SPEED{ 0.01};
 };
 }
 

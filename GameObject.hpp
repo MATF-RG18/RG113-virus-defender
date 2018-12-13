@@ -18,7 +18,6 @@ class GameObject {
         GLfloat get_x() const { return m_xyz[0]; }
         GLfloat get_y() const { return m_xyz[1]; }
         GLfloat get_z() const { return m_xyz[2]; }
-
     protected:
         GLfloat m_xyz[3];
         

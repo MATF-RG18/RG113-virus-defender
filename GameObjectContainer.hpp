@@ -11,14 +11,18 @@ namespace  vd{
 template<typename T, size_t N>
 class GameObjectContainer {
     public:
+        using iterator = typename std::vector<T>::iterator;
         GameObjectContainer() : m_objects(N) {}
         void update();
         void draw();
         void insert(const T& object);
+        iterator begin() { return m_objects.begin(); }
+        iterator end() { return m_objects.end(); }
     private:
         std::vector<T> m_objects;
         // size_t m_active_count={0};
 };
+
 
 template<typename T, size_t N>
 void GameObjectContainer<T,N>::update()

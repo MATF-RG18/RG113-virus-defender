@@ -13,10 +13,11 @@ class Portal : public GameObject{
         void update() override;
         void take_damage(GLfloat damage) {
             m_hp -= damage;
+            std::cerr << m_hp << '\n';
             if (m_hp <= 0)
                 std::cerr << "End!";
         }
-
+        GLfloat get_radius() const { return m_radius; }
     private:
         GLfloat m_hp;
         GLfloat m_radius = 3;

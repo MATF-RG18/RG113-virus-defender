@@ -16,7 +16,7 @@ namespace vd {
         private:
             static constexpr GLfloat HP {600};
             static constexpr GLfloat RADIUS{0.3};
-            static constexpr GLfloat SPEED{ 0.05};
+            static constexpr GLfloat SPEED{ 0.01};
     };
 }
 
