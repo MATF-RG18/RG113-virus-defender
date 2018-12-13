@@ -15,7 +15,7 @@
 #include "Timer.hpp"
 #include "MouseAction.hpp"
 #include "GameVariables.hpp"
-
+#include "Stats.hpp"
 namespace vd{
 class Game {
 public:
@@ -39,7 +39,7 @@ private:
     const int m_msec_update = 13;
     const int m_timer_id = 1;
     GridController m_grid_controller;
-    Window m_window{1024, 768};
+    Window& m_window {GameVariables::window};
     Camera m_camera;
     SpellCaster m_spell_caster;
     KeyboardAction m_keyboard_action;
@@ -47,6 +47,8 @@ private:
     Timer m_timer{13, 1};
     PassiveMouseMotionAction m_passive_mouse_motion_action;
     MouseAction m_mouse_action;
+    Stats stats;
+  
     
 };
 }

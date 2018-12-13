@@ -18,7 +18,10 @@ namespace vd {
 
     void Game::update() {
         m_grid_controller.update();
+        stats.update();
+        GameVariables::update();
     }
+ 
 
     void Game::draw() {
         glClear(GL_DEPTH_BUFFER_BIT|GL_COLOR_BUFFER_BIT);
@@ -38,10 +41,9 @@ namespace vd {
             glVertex3f(50, 0, 0);
         glEnd();
 
- 
-
         
         m_grid_controller.draw();
+        stats.draw();
         glutSwapBuffers();
 
     }

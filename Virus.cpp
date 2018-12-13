@@ -17,7 +17,7 @@ void Virus::update() {
     if (m_hp <= 0) {
         deactivate();
         GameVariables::PLASMA += GameVariables::VIRUS_PLASMA_WORTH;
-        std::cerr << GameVariables::PLASMA;
+        std::cerr << GameVariables::PLASMA << '\n';
         return;
     }
         
