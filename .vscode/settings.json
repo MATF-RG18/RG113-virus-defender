@@ -34,6 +34,8 @@
         "new": "cpp",
         "optional": "cpp",
         "string_view": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "cstdarg": "cpp",
+        "numeric": "cpp"
     }
 }

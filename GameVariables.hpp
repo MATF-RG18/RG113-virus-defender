@@ -5,7 +5,9 @@
 #include<GL/glut.h>
 #include<limits>
 #include "Window.hpp"
+#include "RandomReal.hpp"
 namespace vd {
+
 
 
 class GameVariables {
@@ -26,13 +28,21 @@ class GameVariables {
         static constexpr long long INF_TIME_TICKS = std::numeric_limits<long long>::max();
         
         static constexpr long long VIRUS_PLASMA_WORTH = 100;
-        static constexpr long long PERMA_SPELL_WORTH = 300;
+        static constexpr long long PERMA_SPELL_WORTH = 200;
         
-        static constexpr int SLOW_SPELL_DURATION = 360;
-        static constexpr int DAMAGE_SPELL_DURATION = 120;
+        static constexpr int SLOW_SPELL_DURATION = 500;
+        static constexpr int DAMAGE_SPELL_DURATION = 250;
 
-        static constexpr int SPELL_MANA_WORTH = 500;
-    
+        
+
+        static constexpr int SPELL_MANA_WORTH = 200;
+        static constexpr int TICKS_PER_SEC = 60;
+
+        static constexpr float GRID_X_SIZE = 50;
+        static constexpr float GRID_Y_SIZE = 50;
+        static RandomReal rand_spawn_interval;
+        static RandomReal rand_sleep_interval;
+        static RandomReal rand_active_interval;
         static void update();
 };
 

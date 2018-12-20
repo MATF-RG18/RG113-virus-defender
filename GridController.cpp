@@ -1,21 +1,47 @@
 #include "GridController.hpp"
+#include "GameVariables.hpp"
 
 namespace vd {
 
 GridController::GridController()
 {
-    m_strong_virus_factories.emplace_back(7, 48, 48, 0.1);
-    m_fast_virus_factories.emplace_back(10.4, 5, 48, 0.1);
+    for (float x = 0; x < GameVariables::GRID_X_SIZE; x+=7) {
+        m_strong_virus_factories.emplace_back(x, 0, StrongVirus::RADIUS);
+        m_evasive_virus_factories.emplace_back(x + 0.1, 0.2, EvasiveVirus::RADIUS);
+        m_fast_virus_factories.emplace_back(x + 0.5, 0.7, FastVirus::RADIUS);
+    }
 
-    m_evasive_virus_factories.emplace_back(10, 48, 5, 0.1);
+    for (float x = 0; x < GameVariables::GRID_X_SIZE; x+=7) {
+        m_strong_virus_factories.emplace_back(x, 50, StrongVirus::RADIUS);
+        m_evasive_virus_factories.emplace_back(x + 0.1, 50 - 0.2, EvasiveVirus::RADIUS);
+        m_fast_virus_factories.emplace_back(x + 0.5, 50 - 0.7, FastVirus::RADIUS);
+    }
 
-    m_fast_virus_factories.emplace_back(8, 5, 48, 0.1);
-    m_fast_virus_factories.emplace_back(12, 8, 46, 0.1);
+    for (float y = 0; y < GameVariables::GRID_Y_SIZE; y+=7) {
+        m_strong_virus_factories.emplace_back(0, y, StrongVirus::RADIUS);
+        m_evasive_virus_factories.emplace_back(0.1, y, EvasiveVirus::RADIUS);
+        m_fast_virus_factories.emplace_back(0.5, y, FastVirus::RADIUS);
+    }
 
-    m_strong_virus_factories.emplace_back(4.5, 25, 48, 0.1);
+    for (float y = 0; y < GameVariables::GRID_X_SIZE; y+=7) {
+        m_strong_virus_factories.emplace_back(50, y, StrongVirus::RADIUS);
+        m_evasive_virus_factories.emplace_back(50 - 0.9, y, EvasiveVirus::RADIUS);
+        m_fast_virus_factories.emplace_back(50 - 0.3, y, FastVirus::RADIUS);
+    }
 
-    m_fast_virus_factories.emplace_back(12, 5, 5, 0.1);
-    m_fast_virus_factories.emplace_back(12, 22, 5, 0.1);
+
+    // m_strong_virus_factories.emplace_back(48, 48, 0.1);
+    // m_fast_virus_factories.emplace_back(5, 48, 0.1);
+
+    // m_evasive_virus_factories.emplace_back(48, 5, 0.1);
+
+    // m_fast_virus_factories.emplace_back(5, 48, 0.1);
+    // m_fast_virus_factories.emplace_back(8, 46, 0.1);
+
+    // m_strong_virus_factories.emplace_back(25, 48, 0.1);
+
+    // m_fast_virus_factories.emplace_back(5, 5, 0.1);
+    // m_fast_virus_factories.emplace_back(22, 5, 0.1);
 
 
 }
@@ -107,6 +133,8 @@ void GridController::update_factories()
         if (f.ready())
             m_fast_viruses.insert(f.get());
     }
+
+
 }
 
 

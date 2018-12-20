@@ -41,10 +41,6 @@ void Cursor::draw()
     }
 
 void Cursor::init() {
-    draw_list = glGenLists(1);
-    glNewList (draw_list, GL_COMPILE);
-        glColor3f (1.0, 0.0, 0.0);
-        glutSolidSphere(1, 10, 20);
-    glEndList ();
+
 }
 }
