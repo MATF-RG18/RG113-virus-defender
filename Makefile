@@ -11,7 +11,7 @@ $(PROGRAM): $(OBJ_FILES)
 	$(CC) -o $@ $^ $(CPPFLAGS)
 
 %.o: %.cpp
-	$(CC) $(CXXFLAGS) -c -o $@ $< $(CPPFLAGS)
+	$(CC) $(CXXFLAGS) -c -o $@ $< 
 
 
 .PHONY: clean
