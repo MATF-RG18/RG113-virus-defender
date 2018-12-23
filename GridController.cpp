@@ -4,30 +4,40 @@
 namespace vd {
 
 GridController::GridController() {
-  for (float x = 0; x < GameVariables::GRID_X_SIZE; x += 10) {
+  for (float x = 0; x < GameVariables::GRID_X_SIZE; x += 6) {
     m_strong_virus_factories.emplace_back(x, 0, StrongVirus::RADIUS);
     m_evasive_virus_factories.emplace_back(x + 0.1, 0.2, EvasiveVirus::RADIUS);
     m_fast_virus_factories.emplace_back(x + 0.5, 0.7, FastVirus::RADIUS);
   }
 
-  for (float x = 0; x < GameVariables::GRID_X_SIZE; x += 10) {
+  for (float x = 0; x < GameVariables::GRID_X_SIZE; x += 6) {
     m_strong_virus_factories.emplace_back(x, 50, StrongVirus::RADIUS);
     m_evasive_virus_factories.emplace_back(x + 0.1, 50 - 0.2,
                                            EvasiveVirus::RADIUS);
     m_fast_virus_factories.emplace_back(x + 0.5, 50 - 0.7, FastVirus::RADIUS);
   }
 
-  for (float y = 0; y < GameVariables::GRID_Y_SIZE; y += 10) {
+  for (float y = 0; y < GameVariables::GRID_Y_SIZE; y += 6) {
     m_strong_virus_factories.emplace_back(0, y, StrongVirus::RADIUS);
     m_evasive_virus_factories.emplace_back(0.1, y, EvasiveVirus::RADIUS);
     m_fast_virus_factories.emplace_back(0.5, y, FastVirus::RADIUS);
   }
 
-  for (float y = 0; y < GameVariables::GRID_X_SIZE; y += 10) {
+  for (float y = 0; y < GameVariables::GRID_X_SIZE; y += 6) {
     m_strong_virus_factories.emplace_back(50, y, StrongVirus::RADIUS);
     m_evasive_virus_factories.emplace_back(50 - 0.9, y, EvasiveVirus::RADIUS);
     m_fast_virus_factories.emplace_back(50 - 0.3, y, FastVirus::RADIUS);
+    
   }
+
+  m_strong_virus_factories.front().activate();
+  m_strong_virus_factories.back().activate();
+
+  m_evasive_virus_factories.front().activate();
+  m_evasive_virus_factories.back().activate();
+
+  m_fast_virus_factories.front().activate();
+  m_fast_virus_factories.back().activate();
 
   // m_strong_virus_factories.emplace_back(48, 48, 0.1);
   // m_fast_virus_factories.emplace_back(5, 48, 0.1);

@@ -3,6 +3,11 @@
 #include <cmath>
 namespace vd {
 
+  void Virus::set_material()
+  {
+    m_material.draw();
+  }
+
 void Virus::attack() {
   auto dx = 25 - m_xyz[0];
   auto dy = 25 - m_xyz[1];

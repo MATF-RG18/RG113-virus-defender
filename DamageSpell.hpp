@@ -17,7 +17,7 @@ public:
   }
 
 private:
-  constexpr static GLfloat m_damage_per_tick{25};
+  constexpr static GLfloat m_damage_per_tick{10};
 };
 
 } // namespace vd

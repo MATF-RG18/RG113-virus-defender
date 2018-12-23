@@ -16,11 +16,11 @@ public:
 
   static long long PLASMA;
 
-  static GLfloat PORTAL_HP;
+  static int PORTAL_HP;
 
   static int MANA;
   static constexpr int MAX_MANA = 1000;
-  static constexpr GLfloat MANA_REFRESH_RATE = 10;
+  static constexpr GLfloat MANA_REFRESH_RATE = 50;
 
   static constexpr int INIT_WINDOW_HEIGHT = 768;
   static constexpr int INIT_WINDOW_WIDTH = 768;
@@ -28,11 +28,11 @@ public:
   static constexpr long long INF_TIME_TICKS =
       std::numeric_limits<long long>::max();
 
-  static constexpr long long VIRUS_PLASMA_WORTH = 100;
-  static constexpr long long PERMA_SPELL_WORTH = 200;
+  static constexpr long long VIRUS_PLASMA_WORTH = 500;
+  static constexpr long long PERMA_SPELL_WORTH = 1000;
 
-  static constexpr int SLOW_SPELL_DURATION = 500;
-  static constexpr int DAMAGE_SPELL_DURATION = 250;
+  static constexpr int SLOW_SPELL_DURATION = 250;
+  static constexpr int DAMAGE_SPELL_DURATION = 125;
 
   static constexpr int SPELL_MANA_WORTH = 200;
   static constexpr int TICKS_PER_SEC = 60;

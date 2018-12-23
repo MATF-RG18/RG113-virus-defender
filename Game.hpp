@@ -49,7 +49,7 @@ private:
   SpellCaster m_spell_caster;
   KeyboardAction m_keyboard_action;
   Cursor m_cursor;
-  Timer m_timer{15, 1};
+  Timer m_timer{20, 1};
   PassiveMouseMotionAction m_passive_mouse_motion_action;
   MouseAction m_mouse_action;
   Stats stats;

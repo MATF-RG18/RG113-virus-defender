@@ -14,7 +14,7 @@ Portal::Portal()
 {
   m_xyz[0] = m_xyz[1] = 25; 
   m_material.set_ambient(0.1, 0.1, 0.4, 1);
-  m_material.set_diffuse(0.1, 0.1, 0.4, 1);
+  m_material.set_diffuse(0.1, 0.1, 0.7, 1);
   m_material.set_specular(0,0,1,1);
   m_material.set_shininess(30);
 

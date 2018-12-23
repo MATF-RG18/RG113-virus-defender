@@ -12,9 +12,9 @@ public:
   void draw() override;
   void update() override;
 
-  static constexpr GLfloat HP{100};
+  static constexpr GLfloat HP{500};
   static constexpr GLfloat RADIUS{0.2};
-  static constexpr GLfloat SPEED{0.01};
+  static constexpr GLfloat SPEED{0.07};
 
 private:
 };

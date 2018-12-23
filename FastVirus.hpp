@@ -11,7 +11,7 @@ public:
   void update() override;
   static constexpr GLfloat HP{400};
   static constexpr GLfloat RADIUS{0.2};
-  static constexpr GLfloat SPEED{0.02};
+  static constexpr GLfloat SPEED{0.08};
 
 private:
 };

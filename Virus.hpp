@@ -25,7 +25,7 @@ public:
   void attack();
   void reset_speed() { m_speed = 1; }
   void update() override;
-
+  void set_material();
 protected:
   GLfloat m_hp;
   GLfloat m_speed;

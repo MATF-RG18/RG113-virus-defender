@@ -5,10 +5,10 @@ namespace vd {
 
     Plane::Plane()
     {
-        m_material.set_ambient(0.9,0.9,0.9,1);
-        m_material.set_diffuse(0,0,0.1,1);
-        m_material.set_specular(0,0,0,0);
-        m_material.set_shininess(1);
+        m_material.set_ambient(0.3,0.3,0.2,1);
+        m_material.set_diffuse(0.4,0.4,0.8,1);
+        m_material.set_specular(0.1,0.1,0.3,1);
+        m_material.set_shininess(10);
         m_material.set_side(GL_FRONT);
         
         // m_draw_list = glGenLists(1);

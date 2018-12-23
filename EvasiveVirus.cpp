@@ -3,7 +3,7 @@
 
 namespace vd {
 EvasiveVirus::EvasiveVirus(GLfloat x, GLfloat y, GLfloat z)
-      : Virus(x, y, z, HP, SPEED, RADIUS) {
+    : Virus(x, y, z, HP, SPEED, RADIUS) {
     m_material.set_ambient(0.3,0.3,0.9,1);
     m_material.set_diffuse(0.1, 0.3, 0.9, 1);
     m_material.set_specular(0,0,0.3,1);

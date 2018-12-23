@@ -48,7 +48,7 @@ void Game::init()
 
 void Game::update() {
   m_grid_controller.update();
-  // stats.update();
+  stats.update();
   GameVariables::update();
 }
 
@@ -73,7 +73,7 @@ void Game::draw() {
   // glEnd();
   m_plane.draw();
   m_grid_controller.draw();
-  // stats.draw();
+  stats.draw();
   
   glutSwapBuffers();
 }
