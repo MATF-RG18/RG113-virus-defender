@@ -27,7 +27,7 @@ public:
 
 private:
   static constexpr int MAX_VIRUSES = 150;
-  static constexpr int MAX_ACTIVE_SPELLS = 40;
+  static constexpr int MAX_ACTIVE_SPELLS = 200;
 
   GameObjectContainer<SlowSpell, MAX_ACTIVE_SPELLS> m_slow_spells;
   GameObjectContainer<DamageSpell, MAX_ACTIVE_SPELLS> m_damage_spells;

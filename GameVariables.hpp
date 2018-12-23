@@ -39,6 +39,8 @@ public:
 
   static constexpr float GRID_X_SIZE = 50;
   static constexpr float GRID_Y_SIZE = 50;
+
+  static constexpr float INIT_PORTAL_HP = 5000;
   static RandomReal rand_spawn_interval;
   static RandomReal rand_sleep_interval;
   static RandomReal rand_active_interval;

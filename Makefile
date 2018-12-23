@@ -1,5 +1,5 @@
 CC      = g++
-CXXFLAGS  = -g -Wall -std=c++17 -Wextra
+CXXFLAGS  = -Wall -std=c++17 -Wextra -O3
 CPPFLAGS  = -lglut -lGLU -lGL
 
 SRC_FILES := $(wildcard *.cpp)
