@@ -6,22 +6,18 @@
 
 namespace vd {
 class EvasiveVirus : public Virus {
-    public:
-        EvasiveVirus(GLfloat x = 0, GLfloat y = 0, GLfloat z = 0) : 
-        Virus(x,y, z, HP, SPEED, RADIUS) {
-                set_color(1, 0, 0);
-        }
-        void draw() override;
-        void update() override;
+public:
+  EvasiveVirus(GLfloat x = 0, GLfloat y = 0, GLfloat z = RADIUS);
+     
+  void draw() override;
+  void update() override;
 
-        static constexpr GLfloat HP {100};
-        static constexpr GLfloat RADIUS{0.1};
-        static constexpr GLfloat SPEED{ 0.01};
-    private:
-        
+  static constexpr GLfloat HP{100};
+  static constexpr GLfloat RADIUS{0.2};
+  static constexpr GLfloat SPEED{0.01};
+
+private:
 };
-}
-
-
+} // namespace vd
 
 #endif // EVASIVEVIRUS_HPP

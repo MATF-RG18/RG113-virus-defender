@@ -1,7 +1,4 @@
 #include "SpellCaster.hpp"
-#include<GL/glut.h>
+#include <GL/glut.h>
 
-namespace vd {
-
-
-}
+namespace vd {}
