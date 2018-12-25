@@ -54,10 +54,13 @@ void DamageSpell::applay(Virus &v) { v.set_hp(v.get_hp() - m_damage_per_tick); }
 void DamageSpell::update() {
   if (!is_active())
     return;
-  m_animation_param += 20;
+  
 
-  if (m_duration_ticks >= 0) {
+  if (m_duration_ticks >= 0 ) {
     --m_duration_ticks;
+    if (GameVariables::DAMAGE_SPELL_DURATION >= m_duration_ticks)
+      m_animation_param += 20;
+
   } else {
     deactivate();
   }

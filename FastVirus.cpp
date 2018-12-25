@@ -15,6 +15,7 @@ FastVirus::FastVirus(GLfloat x, GLfloat y, GLfloat z)
 
 void FastVirus::init()
 {
+  m_draw_list = glGenLists(1);
   m_material.set_ambient(0.3, 0.9, 0.3, 1);
   m_material.set_diffuse(0.1, 0.9, 0.1, 1);
   m_material.set_specular(0, 0.3, 0, 1);

@@ -58,9 +58,11 @@ void SlowSpell::draw() {
 void SlowSpell::update() {
   if (!is_active())
     return;
-  m_animation_param += 20;
+  
   if (m_duration_ticks >= 0) {
     --m_duration_ticks;
+    if (GameVariables::SLOW_SPELL_DURATION >= m_duration_ticks)
+      m_animation_param += 20;
   } else {
     deactivate();
   }

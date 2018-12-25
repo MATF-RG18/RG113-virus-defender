@@ -13,6 +13,7 @@ EvasiveVirus::EvasiveVirus(GLfloat x, GLfloat y, GLfloat z)
 
 void EvasiveVirus::init()
 {
+  m_draw_list = glGenLists(1);
   m_material.set_ambient(0.3, 0.3, 0.9, 1);
   m_material.set_diffuse(0.1, 0.3, 0.9, 1);
   m_material.set_specular(0, 0, 0.3, 1);

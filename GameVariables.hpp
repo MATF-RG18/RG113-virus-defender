@@ -35,6 +35,9 @@ public:
   static constexpr int DAMAGE_SPELL_DURATION = 125;
 
   static constexpr int SPELL_MANA_WORTH = 200;
+
+  static constexpr int SLOW_SPELL_MANA_WORTH = 50;
+  static constexpr int DAMAGE_SPELL_MANA_WORTH = 200;
   static constexpr int TICKS_PER_SEC = 60;
 
   static constexpr float GRID_X_SIZE = 50;

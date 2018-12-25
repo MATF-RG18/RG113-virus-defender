@@ -12,9 +12,7 @@ public:
   void update() override;
   void take_damage(GLfloat damage) {
     GameVariables::PORTAL_HP -= damage;
-    std::cerr << GameVariables::PORTAL_HP << '\n';
     if (GameVariables::PORTAL_HP <= 0) {
-      std::cerr << "End!";
       GameVariables::GAME_ON = false;
     }
   }
