@@ -16,11 +16,13 @@ public:
   void set_normal_spell() override {
     m_duration_ticks = GameVariables::DAMAGE_SPELL_DURATION;
   }
+  static void init();
 
 private:
   constexpr static GLfloat m_damage_per_tick{10};
-  static MaterialProperties m_material_prop;
-
+  constexpr static GLfloat RADIUS = 1.25;
+  static GLuint m_draw_list;
+  static Material m_material;
 };
 
 } // namespace vd

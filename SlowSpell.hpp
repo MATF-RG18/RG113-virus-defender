@@ -20,6 +20,7 @@ public:
 private:
   static GLuint m_draw_list;
   static Material m_material;
+  static constexpr GLfloat RADIUS = 1.25;
 
 };
 

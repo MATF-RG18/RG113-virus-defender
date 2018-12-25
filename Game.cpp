@@ -19,6 +19,9 @@ void Game::init() {
   StrongVirus::init();
   EvasiveVirus::init();
   FastVirus::init();
+  SlowSpell::init();
+  DamageSpell::init();
+  
 
 }
 
