@@ -26,7 +26,6 @@ public:
   void reset_speed() { m_speed = 1; }
   void update() override;
 
-
 protected:
   GLfloat m_hp;
   GLfloat m_speed;

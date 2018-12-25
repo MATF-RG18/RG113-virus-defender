@@ -7,13 +7,9 @@ GLuint StrongVirus::m_draw_list;
 Material StrongVirus::m_material;
 
 StrongVirus::StrongVirus(GLfloat x, GLfloat y, GLfloat z)
-    : Virus(x, y, z, HP, SPEED, RADIUS) {
+    : Virus(x, y, z, HP, SPEED, RADIUS) {}
 
-
-}
-
-void StrongVirus::init()
-{
+void StrongVirus::init() {
   m_material.set_ambient(0.8, 0.3, 0.3, 1);
   m_material.set_diffuse(1, 0.3, 0.1, 1);
   m_material.set_specular(0.3, 0, 0, 1);
@@ -24,7 +20,6 @@ void StrongVirus::init()
   glutSolidSphere(RADIUS, 64, 64);
   glEndList();
 }
-
 
 void StrongVirus::draw() {
   // glColor3f(m_color_rgb[0], m_color_rgb[1], m_color_rgb[2]);

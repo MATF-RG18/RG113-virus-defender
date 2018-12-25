@@ -33,12 +33,10 @@ void Game::update() {
   GameVariables::update();
 }
 
-
 // Crta sve aktivne objekte u igri
 void Game::draw() {
   glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
-  
   m_camera.setup();
 
   m_cursor.move(m_camera.position_point()[0], m_camera.position_point()[1],

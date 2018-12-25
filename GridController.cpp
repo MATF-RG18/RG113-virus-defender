@@ -39,7 +39,6 @@ GridController::GridController() {
   m_fast_virus_factories.back().activate();
 }
 
-
 void GridController::applay_spells() {
   for (auto &s : m_damage_spells) {
     if (s.is_active()) {

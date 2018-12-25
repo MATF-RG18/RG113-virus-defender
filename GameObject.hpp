@@ -22,7 +22,7 @@ public:
 
 protected:
   GLfloat m_xyz[3];
-  
+
 private:
   bool m_active = false;
 };

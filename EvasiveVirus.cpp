@@ -7,13 +7,10 @@ GLuint EvasiveVirus::m_draw_list;
 Material EvasiveVirus::m_material;
 
 EvasiveVirus::EvasiveVirus(GLfloat x, GLfloat y, GLfloat z)
-    : Virus(x, y, z, HP, SPEED, RADIUS) {
-
-}
+    : Virus(x, y, z, HP, SPEED, RADIUS) {}
 // Inicijalizacija draw liste za cratnje EvasiveVirusa
 // poziva se samo jednom u Game::init
-void EvasiveVirus::init()
-{
+void EvasiveVirus::init() {
   m_draw_list = glGenLists(1);
   m_material.set_ambient(0.3, 0.3, 0.9, 1);
   m_material.set_diffuse(0.1, 0.3, 0.9, 1);

@@ -27,7 +27,7 @@ public:
     m_move_direction[0] = m_move_direction[1] = m_move_direction[2] = 0;
   }
 
-  // Kada se pritisne neko od WASD 
+  // Kada se pritisne neko od WASD
   // kamera se krece u odgovarajucem pravcu
   // dokle god je to dugme pritisnuto
   // Prisitkom na neko od WASD modifikuje
@@ -39,9 +39,8 @@ public:
   void start_moving_west();
   void start_moving_south();
 
-
   // Odpustanjem nekod od dugmica WASD
-  // oduzima se odgovarajuci vektor pravca od 
+  // oduzima se odgovarajuci vektor pravca od
   // vektora kretanje kamere
   void stop_moving_north();
   void stop_moving_east();
@@ -74,11 +73,10 @@ private:
   // Uvek gleda na z = 0
   const GLfloat m_z_position = 0;
 
-
   // Pomocna klasa koja definise
   // svaki od North(W), East(D), South(S), West(D)
   // vektora kretanja kamere koji se dodaju ili oduzimaju
-  // u m_move_direction pritiskom ili odpustanjem 
+  // u m_move_direction pritiskom ili odpustanjem
   // tastera WASD
   struct MovmentVectors {
   private:

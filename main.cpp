@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
   glutCreateWindow(argv[0]);
 
   //
-  
+
   // Initialize callback functions
   glutKeyboardFunc(on_keyboard);
   glutReshapeFunc(on_reshape);

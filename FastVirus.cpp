@@ -6,14 +6,12 @@ GLuint FastVirus::m_draw_list;
 Material FastVirus::m_material;
 
 FastVirus::FastVirus(GLfloat x, GLfloat y, GLfloat z)
-    : Virus(x, y, z, HP, SPEED, RADIUS) {
-}
+    : Virus(x, y, z, HP, SPEED, RADIUS) {}
 
 // Inicijalizacija draw liste za cratnje FastVirus
 // poziva se samo jednom u Game::init
 
-void FastVirus::init()
-{
+void FastVirus::init() {
   m_draw_list = glGenLists(1);
   m_material.set_ambient(0.3, 0.9, 0.3, 1);
   m_material.set_diffuse(0.1, 0.9, 0.1, 1);

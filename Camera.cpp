@@ -15,8 +15,6 @@ Camera::Camera() {
   m_xyz_position[2] = m_z_position;
 }
 
-
-
 void Camera::start_moving_north() {
   m_move_direction[0] += MovmentVectors::north[0];
   m_move_direction[1] += MovmentVectors::north[1];
@@ -63,7 +61,8 @@ void Camera::setup() {
   m_xyz_position[1] += m_move_direction[1];
 
   gluLookAt(m_xyz_eye[0], m_xyz_eye[1], m_xyz_eye[2], m_xyz_position[0],
-            m_xyz_position[1], m_xyz_position[2], m_xyz_up[0], m_xyz_up[1], m_xyz_up[2]);
+            m_xyz_position[1], m_xyz_position[2], m_xyz_up[0], m_xyz_up[1],
+            m_xyz_up[2]);
 }
 
 } // namespace vd

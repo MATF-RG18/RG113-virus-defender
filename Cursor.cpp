@@ -4,7 +4,6 @@
 #include <iostream>
 namespace vd {
 
-
 // Izracunava poziciju cursora na ravni igre u zavisnosti od pomeranja
 // misa po ekranu
 void Cursor::move(GLfloat camera_position_x, GLfloat camera_position_y,
@@ -29,11 +28,8 @@ void Cursor::move(GLfloat camera_position_x, GLfloat camera_position_y,
   // misem
   m_spell_caster.set_x(m_x_on_plane);
   m_spell_caster.set_y(m_y_on_plane);
-
 }
-void Cursor::draw() {
-  m_spell_caster.get_active_spell().draw();
-}
+void Cursor::draw() { m_spell_caster.get_active_spell().draw(); }
 
 void Cursor::init() {}
 } // namespace vd

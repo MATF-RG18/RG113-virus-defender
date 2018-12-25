@@ -39,7 +39,6 @@ protected:
   GLfloat m_color_rgb[3];
 
   int m_animation_param;
-
 };
 
 } // namespace vd

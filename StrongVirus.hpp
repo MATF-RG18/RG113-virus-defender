@@ -2,8 +2,8 @@
 #if !defined(STRONGVIRUS_HPP)
 #define STRONGVIRUS_HPP
 
-#include "Virus.hpp"
 #include "MaterialProperties.hpp"
+#include "Virus.hpp"
 namespace vd {
 class StrongVirus : public Virus {
 public:
@@ -17,6 +17,7 @@ public:
   static constexpr GLfloat SPEED{0.02};
 
   static void init();
+
 private:
   static GLuint m_draw_list;
   static Material m_material;

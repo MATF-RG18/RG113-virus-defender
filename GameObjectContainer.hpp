@@ -18,7 +18,6 @@ public:
 
 private:
   std::vector<T> m_objects;
-
 };
 
 template <typename T, size_t N> void GameObjectContainer<T, N>::update() {
@@ -40,7 +39,7 @@ void GameObjectContainer<T, N>::insert(const T &object) {
   }
 }
 template <typename T, size_t N> void GameObjectContainer<T, N>::draw() {
-  
+
   for (auto &o : m_objects) {
     if (o.is_active()) {
       o.draw();

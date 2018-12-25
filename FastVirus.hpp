@@ -1,8 +1,8 @@
 
 #if !defined(FASTVIRUS_HPP)
 #define FASTVIRUS_HPP
-#include "Virus.hpp"
 #include "MaterialProperties.hpp"
+#include "Virus.hpp"
 #include <GL/glut.h>
 namespace vd {
 class FastVirus : public Virus {
@@ -19,7 +19,6 @@ private:
   static MaterialProperties m_material_prop;
   static GLuint m_draw_list;
   static Material m_material;
-
 };
 } // namespace vd
 

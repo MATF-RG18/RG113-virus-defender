@@ -2,9 +2,9 @@
 #if !defined(DAMAGESPELL_HPP)
 #define DAMAGESPELL_HPP
 
+#include "MaterialProperties.hpp"
 #include "Spell.hpp"
 #include "Virus.hpp"
-#include "MaterialProperties.hpp"
 namespace vd {
 
 class DamageSpell : public Spell {

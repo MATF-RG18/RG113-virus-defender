@@ -3,8 +3,6 @@
 #include <cmath>
 namespace vd {
 
-
-
 void Virus::attack() {
   auto dx = 25 - m_xyz[0];
   auto dy = 25 - m_xyz[1];

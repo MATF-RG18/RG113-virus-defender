@@ -4,7 +4,6 @@
 #include <GL/glut.h>
 namespace vd {
 
-
 void Portal::draw() {
   m_material.draw();
   glPushMatrix();
@@ -21,7 +20,7 @@ Portal::Portal() {
 }
 void Portal::update() {
   m_animation_parameter += 3;
-  m_xyz[2] = 0.3*Math::cos(m_animation_parameter);
+  m_xyz[2] = 0.3 * Math::cos(m_animation_parameter);
 }
 
 } // namespace vd

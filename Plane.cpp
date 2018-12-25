@@ -18,20 +18,18 @@ void Plane::init() {
   glNewList(m_draw_list, GL_COMPILE);
   m_material.draw();
   for (float y = 0; y < 50; y += 0.5) {
-            glBegin(GL_TRIANGLE_STRIP);
-            for (float x = 0; x < 50; x += 0.5) {
-                glNormal3f(0,0,1);
-                glVertex3f(x,y,0);
+    glBegin(GL_TRIANGLE_STRIP);
+    for (float x = 0; x < 50; x += 0.5) {
+      glNormal3f(0, 0, 1);
+      glVertex3f(x, y, 0);
 
-                glNormal3f(0,0,1);
-                glVertex3f(x, y + 0.5, 0);
-      }
-      glEnd();
+      glNormal3f(0, 0, 1);
+      glVertex3f(x, y + 0.5, 0);
+    }
+    glEnd();
   }
   glEndList();
 }
-void Plane::draw() {
-  glCallList(m_draw_list);
-}
+void Plane::draw() { glCallList(m_draw_list); }
 
 }; // namespace vd

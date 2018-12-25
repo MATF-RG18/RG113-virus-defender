@@ -2,8 +2,8 @@
 #if !defined(EVASIVEVIRUS_HPP)
 #define EVASIVEVIRUS_HPP
 
-#include "Virus.hpp"
 #include "MaterialProperties.hpp"
+#include "Virus.hpp"
 namespace vd {
 class EvasiveVirus : public Virus {
 public:
@@ -11,7 +11,7 @@ public:
 
   void draw() override;
   void update() override;
-  
+
   static void init();
   static constexpr GLfloat HP{500};
   static constexpr GLfloat RADIUS{0.2};

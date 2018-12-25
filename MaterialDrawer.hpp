@@ -4,11 +4,9 @@
 
 class MaterialProperties;
 
-class MaterialDrawer
-{
-  void set(const MaterialProperties& m);
+class MaterialDrawer {
+  void set(const MaterialProperties &m);
   void draw();
 };
-
 
 #endif // MATERIALDRAWER_HPP

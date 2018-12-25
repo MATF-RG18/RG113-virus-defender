@@ -17,7 +17,7 @@ public:
   void set_on_screen_y(int y) { m_y_on_screen = y; }
 
   void init();
-  
+
   void move(GLfloat camera_position_x, GLfloat camera_position_y, int center_x,
             int center_y);
 

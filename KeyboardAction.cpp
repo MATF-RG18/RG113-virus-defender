@@ -11,16 +11,16 @@ void KeyboardAction::key_down(unsigned key, int x, int y) {
     on_2_down(x, y);
     break;
   case 'w':
-    return on_w_down(x, y);
+    on_w_down(x, y);
     break;
   case 'a':
-    return on_a_down(x, y);
+    on_a_down(x, y);
     break;
   case 's':
-    return on_s_down(x, y);
+    on_s_down(x, y);
     break;
   case 'd':
-    return on_d_down(x, y);
+    on_d_down(x, y);
     break;
   }
 }
@@ -49,37 +49,14 @@ void KeyboardAction::on_2_down(int, int) {
   m_spell_caster.set_active_spell(SpellCaster::Spells::DAMAGE);
 }
 
-void KeyboardAction::on_w_down(int, int) {
-  
-  m_camera.start_moving_north();
-}
-void KeyboardAction::on_a_down(int, int) {
-  
-  m_camera.start_moving_west();
-}
-void KeyboardAction::on_s_down(int, int) {
-  
-  m_camera.start_moving_south();
-}
-void KeyboardAction::on_d_down(int, int) {
-  
-  m_camera.start_moving_east();
-}
+void KeyboardAction::on_w_down(int, int) { m_camera.start_moving_north(); }
+void KeyboardAction::on_a_down(int, int) { m_camera.start_moving_west(); }
+void KeyboardAction::on_s_down(int, int) { m_camera.start_moving_south(); }
+void KeyboardAction::on_d_down(int, int) { m_camera.start_moving_east(); }
 
-void KeyboardAction::on_w_up(int, int) {
-  
-  m_camera.stop_moving_north();
-}
-void KeyboardAction::on_a_up(int, int) {
-  m_camera.stop_moving_west();
-}
-void KeyboardAction::on_s_up(int, int) {
-
-  m_camera.stop_moving_south();
-}
-void KeyboardAction::on_d_up(int, int) {
- 
-  m_camera.stop_moving_east();
-}
+void KeyboardAction::on_w_up(int, int) { m_camera.stop_moving_north(); }
+void KeyboardAction::on_a_up(int, int) { m_camera.stop_moving_west(); }
+void KeyboardAction::on_s_up(int, int) { m_camera.stop_moving_south(); }
+void KeyboardAction::on_d_up(int, int) { m_camera.stop_moving_east(); }
 
 } // namespace vd

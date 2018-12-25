@@ -6,8 +6,6 @@
 
 namespace vd {
 
-
-
 class Material {
 
 public:
