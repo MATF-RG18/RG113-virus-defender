@@ -3,6 +3,8 @@
 #include "Math.hpp"
 #include <GL/glut.h>
 namespace vd {
+
+
 void Portal::draw() {
   m_material.draw();
   glPushMatrix();
@@ -18,7 +20,8 @@ Portal::Portal() {
   m_material.set_shininess(30);
 }
 void Portal::update() {
-  
+  m_animation_parameter += 3;
+  m_xyz[2] = 0.3*Math::cos(m_animation_parameter);
 }
 
 } // namespace vd

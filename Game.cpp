@@ -21,6 +21,7 @@ void Game::init() {
   FastVirus::init();
   SlowSpell::init();
   DamageSpell::init();
+
   
 
 }

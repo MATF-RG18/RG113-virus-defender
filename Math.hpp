@@ -4,7 +4,7 @@
 
 #include <GL/glut.h>
 #include <cmath>
-
+#include<array>
 namespace vd {
 
 class Math {
@@ -18,6 +18,11 @@ public:
     return sqrt((ax - bx) * (ax - bx) + (ay - by) * (ay - by));
   }
   constexpr static double PI = 3.14159265359;
+  static GLfloat sin(int deg)  { return m_sin[deg % 360]; }
+  static GLfloat cos(int deg)  { return m_cos[deg % 360]; }
+private:
+  const static std::array<GLfloat, 360> m_sin;
+  const static std::array<GLfloat, 360> m_cos;
 };
 
 } // namespace vd

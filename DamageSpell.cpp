@@ -1,13 +1,13 @@
 #include "DamageSpell.hpp"
 #include <GL/glut.h>
-
+#include "Math.hpp"
 namespace vd {
 GLuint DamageSpell::m_draw_list;
 Material DamageSpell::m_material;
 
 DamageSpell::DamageSpell(GLfloat x, GLfloat y, GLfloat z)
     : Spell(x, y, z, GameVariables::DAMAGE_SPELL_DURATION, RADIUS) {
-
+      m_animation_param = 0;
 }
 
 void DamageSpell::init()
@@ -42,7 +42,7 @@ void DamageSpell::init()
 
 void DamageSpell::draw() {
 
-  glLineWidth(4);
+  glLineWidth(3 + 2*Math::cos(m_animation_param));
   glPushMatrix();
   glTranslatef(m_xyz[0], m_xyz[1], m_xyz[2]);
   glCallList(m_draw_list);
@@ -54,6 +54,7 @@ void DamageSpell::applay(Virus &v) { v.set_hp(v.get_hp() - m_damage_per_tick); }
 void DamageSpell::update() {
   if (!is_active())
     return;
+  m_animation_param += 20;
 
   if (m_duration_ticks >= 0) {
     --m_duration_ticks;

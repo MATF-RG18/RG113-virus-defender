@@ -48,7 +48,7 @@ void SlowSpell::applay(Virus &v) { v.set_speed(v.get_speed() * 0.7); }
 void SlowSpell::draw() {
   // glColor3f(m_color_rgb[0], m_color_rgb[1],m_color_rgb[2]);
   // m_material.draw();
-  glLineWidth(4);
+  glLineWidth(3 + 2*Math::cos(m_animation_param));
   glPushMatrix();
   glTranslatef(m_xyz[0], m_xyz[1], m_xyz[2]);
   glCallList(m_draw_list);
@@ -58,7 +58,7 @@ void SlowSpell::draw() {
 void SlowSpell::update() {
   if (!is_active())
     return;
-
+  m_animation_param += 20;
   if (m_duration_ticks >= 0) {
     --m_duration_ticks;
   } else {

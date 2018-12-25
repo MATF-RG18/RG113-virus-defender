@@ -19,11 +19,12 @@ public:
     }
   }
   GLfloat get_radius() const { return m_radius; }
+  static void init();
 
 private:
   GLfloat m_radius = 3;
-  Material m_material;
   int m_animation_parameter = 0;
+  Material m_material;
 };
 
 } // namespace vd

@@ -37,7 +37,9 @@ protected:
   long long m_duration_ticks;
   GLfloat m_radius;
   GLfloat m_color_rgb[3];
-  Material m_material;
+
+  int m_animation_param;
+
 };
 
 } // namespace vd
