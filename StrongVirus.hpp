@@ -3,12 +3,12 @@
 #define STRONGVIRUS_HPP
 
 #include "Virus.hpp"
-
+#include "MaterialProperties.hpp"
 namespace vd {
 class StrongVirus : public Virus {
 public:
   StrongVirus(GLfloat x = 0, GLfloat y = 0, GLfloat z = RADIUS);
-     
+
   void draw() override;
   void update() override;
 
@@ -16,7 +16,10 @@ public:
   static constexpr GLfloat RADIUS{0.3};
   static constexpr GLfloat SPEED{0.02};
 
+  static void init();
 private:
+  static GLuint m_draw_list;
+  static Material m_material;
 };
 } // namespace vd
 

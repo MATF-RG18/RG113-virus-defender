@@ -7,12 +7,8 @@
 
 namespace vd {
 
-struct vec3 {
-  GLfloat x, y, z;
-};
 class Math {
 public:
-
   static GLfloat distance(GLfloat ax, GLfloat ay, GLfloat az, GLfloat bx,
                           GLfloat by, GLfloat bz) {
     return sqrt((ax - bx) * (ax - bx) + (ay - by) * (ay - by) +

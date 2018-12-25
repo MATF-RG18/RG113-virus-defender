@@ -28,7 +28,6 @@ public:
   }
   int get_center_x() const { return m_x_center; }
   int get_center_y() const { return m_y_center; }
-  bool is_on_sides(int x, int y) const;
 
 private:
   // Proportion of the Window that goes to regions

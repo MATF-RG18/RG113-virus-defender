@@ -19,4 +19,4 @@ void GameVariables::update() {
     GameVariables::MANA += GameVariables::MANA_REFRESH_RATE;
   }
 }
-}  // namespace vd
+} // namespace vd

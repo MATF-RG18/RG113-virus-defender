@@ -24,6 +24,7 @@ public:
   void cast_spell(const DamageSpell &spell) { m_damage_spells.insert(spell); }
   void update();
   void draw();
+  void init();
 
 private:
   static constexpr int MAX_VIRUSES = 150;

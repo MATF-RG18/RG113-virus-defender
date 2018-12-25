@@ -5,9 +5,9 @@
 #include "EvasiveVirus.hpp"
 #include "FastVirus.hpp"
 #include "GameObject.hpp"
+#include "Material.hpp"
 #include "StrongVirus.hpp"
 #include "Virus.hpp"
-#include "Material.hpp"
 #include <GL/glut.h>
 namespace vd {
 
@@ -38,7 +38,6 @@ protected:
   GLfloat m_radius;
   GLfloat m_color_rgb[3];
   Material m_material;
-
 };
 
 } // namespace vd

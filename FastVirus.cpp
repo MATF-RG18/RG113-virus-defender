@@ -2,23 +2,37 @@
 #include <GL/glut.h>
 
 namespace vd {
+GLuint FastVirus::m_draw_list;
+Material FastVirus::m_material;
 
-  FastVirus::FastVirus(GLfloat x , GLfloat y , GLfloat z )
-      : Virus(x, y, z, HP, SPEED, RADIUS) {
-    m_material.set_ambient(0.3,0.9,0.3,1);
-    m_material.set_diffuse(0.1, 0.9, 0.1, 1);
-    m_material.set_specular(0,0.3,0,1);
-    m_material.set_shininess(30);
-  }
-void FastVirus::draw() {
+FastVirus::FastVirus(GLfloat x, GLfloat y, GLfloat z)
+    : Virus(x, y, z, HP, SPEED, RADIUS) {
+  m_material.set_ambient(0.3, 0.9, 0.3, 1);
+  m_material.set_diffuse(0.1, 0.9, 0.1, 1);
+  m_material.set_specular(0, 0.3, 0, 1);
+  m_material.set_shininess(30);
+}
+
+void FastVirus::init()
+{
+  m_material.set_ambient(0.3, 0.9, 0.3, 1);
+  m_material.set_diffuse(0.1, 0.9, 0.1, 1);
+  m_material.set_specular(0, 0.3, 0, 1);
+  m_material.set_shininess(30);
+  glNewList(m_draw_list, GL_COMPILE);
   m_material.draw();
+  glutSolidSphere(RADIUS, 20, 20);
+  glEndList();
+}
+
+void FastVirus::draw() {
   glPushMatrix();
   glTranslatef(m_xyz[0], m_xyz[1], m_xyz[2]);
-  glutSolidSphere(RADIUS, 20, 20);
+  glCallList(m_draw_list);
   glPopMatrix();
 }
 void FastVirus::update() {
   Virus::update();
   m_speed = SPEED;
 }
-}  // namespace vd
+} // namespace vd

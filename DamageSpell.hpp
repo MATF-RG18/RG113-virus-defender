@@ -4,6 +4,7 @@
 
 #include "Spell.hpp"
 #include "Virus.hpp"
+#include "MaterialProperties.hpp"
 namespace vd {
 
 class DamageSpell : public Spell {
@@ -18,6 +19,8 @@ public:
 
 private:
   constexpr static GLfloat m_damage_per_tick{10};
+  static MaterialProperties m_material_prop;
+
 };
 
 } // namespace vd

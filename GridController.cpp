@@ -27,7 +27,6 @@ GridController::GridController() {
     m_strong_virus_factories.emplace_back(50, y, StrongVirus::RADIUS);
     m_evasive_virus_factories.emplace_back(50 - 0.9, y, EvasiveVirus::RADIUS);
     m_fast_virus_factories.emplace_back(50 - 0.3, y, FastVirus::RADIUS);
-    
   }
 
   m_strong_virus_factories.front().activate();
@@ -38,32 +37,23 @@ GridController::GridController() {
 
   m_fast_virus_factories.front().activate();
   m_fast_virus_factories.back().activate();
-
-  // m_strong_virus_factories.emplace_back(48, 48, 0.1);
-  // m_fast_virus_factories.emplace_back(5, 48, 0.1);
-
-  // m_evasive_virus_factories.emplace_back(48, 5, 0.1);
-
-  // m_fast_virus_factories.emplace_back(5, 48, 0.1);
-  // m_fast_virus_factories.emplace_back(8, 46, 0.1);
-
-  // m_strong_virus_factories.emplace_back(25, 48, 0.1);
-
-  // m_fast_virus_factories.emplace_back(5, 5, 0.1);
-  // m_fast_virus_factories.emplace_back(22, 5, 0.1);
 }
+
 
 void GridController::applay_spells() {
   for (auto &s : m_damage_spells) {
     if (s.is_active()) {
       for (auto &v : m_strong_viruses) {
-        if (v.is_active() && colides(s, v)) s.applay(v);
+        if (v.is_active() && colides(s, v))
+          s.applay(v);
       }
       for (auto &v : m_evasive_viruses) {
-        if (v.is_active() && colides(s, v)) s.applay(v);
+        if (v.is_active() && colides(s, v))
+          s.applay(v);
       }
       for (auto &v : m_fast_viruses) {
-        if (v.is_active() && colides(s, v)) s.applay(v);
+        if (v.is_active() && colides(s, v))
+          s.applay(v);
       }
     }
   }
@@ -76,7 +66,8 @@ void GridController::applay_spells() {
         }
       }
       for (auto &v : m_fast_viruses) {
-        if (v.is_active() && colides(s, v)) s.applay(v);
+        if (v.is_active() && colides(s, v))
+          s.applay(v);
       }
     }
   }
@@ -118,16 +109,18 @@ void GridController::update_factories() {
   }
 
   for (auto &f : m_strong_virus_factories) {
-    if (f.ready()) m_strong_viruses.insert(f.get());
+    if (f.ready())
+      m_strong_viruses.insert(f.get());
   }
   for (auto &f : m_evasive_virus_factories) {
-    if (f.ready()) m_evasive_viruses.insert(f.get());
+    if (f.ready())
+      m_evasive_viruses.insert(f.get());
   }
   for (auto &f : m_fast_virus_factories) {
-    if (f.ready()) m_fast_viruses.insert(f.get());
+    if (f.ready())
+      m_fast_viruses.insert(f.get());
   }
 }
-
 void GridController::update() {
   m_damage_spells.update();
   m_slow_spells.update();
@@ -148,4 +141,4 @@ void GridController::draw() {
   m_portal.draw();
 }
 
-}  // namespace vd
+} // namespace vd

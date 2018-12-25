@@ -18,8 +18,6 @@ private:
   SpellCaster &m_spell_caster;
   void on_1_down(int x, int y);
   void on_2_down(int x, int y);
-  void on_3_down(int x, int y);
-  void on_4_down(int x, int y);
 
   void on_w_down(int x, int y);
   void on_a_down(int x, int y);

@@ -20,7 +20,7 @@ public:
 
   static int MANA;
   static constexpr int MAX_MANA = 1000;
-  static constexpr GLfloat MANA_REFRESH_RATE = 50;
+  static constexpr GLfloat MANA_REFRESH_RATE = 10;
 
   static constexpr int INIT_WINDOW_HEIGHT = 768;
   static constexpr int INIT_WINDOW_WIDTH = 768;

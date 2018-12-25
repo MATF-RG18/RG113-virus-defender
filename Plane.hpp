@@ -5,17 +5,16 @@
 #include "Material.hpp"
 namespace vd {
 
-
-
 class Plane {
-    public:
-        Plane();
-        void draw();
+public:
+  Plane();
+  void init();
+  void draw();
 
-    private:
-        Material m_material;
-        GLuint m_draw_list;
+private:
+  Material m_material;
+  GLuint m_draw_list;
 };
-}
+} // namespace vd
 
 #endif // PLANE_HPP

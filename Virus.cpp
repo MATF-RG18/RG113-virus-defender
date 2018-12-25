@@ -3,10 +3,7 @@
 #include <cmath>
 namespace vd {
 
-  void Virus::set_material()
-  {
-    m_material.draw();
-  }
+
 
 void Virus::attack() {
   auto dx = 25 - m_xyz[0];
@@ -22,11 +19,9 @@ void Virus::update() {
   if (m_hp <= 0) {
     deactivate();
     GameVariables::PLASMA += GameVariables::VIRUS_PLASMA_WORTH;
-    std::cerr << GameVariables::PLASMA << '\n';
     return;
   }
-
   m_xyz[0] += m_move_xyz[0] * m_speed;
   m_xyz[1] += m_move_xyz[1] * m_speed;
 }
-};  // namespace vd
+}; // namespace vd

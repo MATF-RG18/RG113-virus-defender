@@ -5,8 +5,10 @@
 #include "Cursor.hpp"
 #include "GameVariables.hpp"
 #include "KeyboardAction.hpp"
+#include "Light.hpp"
 #include "MouseAction.hpp"
 #include "PassiveMouseMotionAction.hpp"
+#include "Plane.hpp"
 #include "Portal.hpp"
 #include "SlowSpell.hpp"
 #include "SpellCaster.hpp"
@@ -15,8 +17,6 @@
 #include "Timer.hpp"
 #include "Virus.hpp"
 #include "Window.hpp"
-#include "Light.hpp"
-#include "Plane.hpp"
 #include <GL/glut.h>
 #include <vector>
 namespace vd {
@@ -53,7 +53,7 @@ private:
   PassiveMouseMotionAction m_passive_mouse_motion_action;
   MouseAction m_mouse_action;
   Stats stats;
-  Light m_main_light {GL_LIGHT0};
+  Light m_main_light{GL_LIGHT0};
   Plane m_plane;
 };
 } // namespace vd

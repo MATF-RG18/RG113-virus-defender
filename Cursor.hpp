@@ -5,11 +5,17 @@
 #include <GL/glut.h>
 namespace vd {
 
+// Klasa koja prati akcije zadate misem.
+// Projektuje kursor na ekranu na ravan na kojoj se desava igra
+// i omogucava bacanja trenutno odabrane magije
+
 class Cursor {
 public:
   Cursor(SpellCaster &spell_caster) : m_spell_caster(spell_caster) {}
+
   void set_on_screen_x(int x) { m_x_on_screen = x; }
   void set_on_screen_y(int y) { m_y_on_screen = y; }
+
   void init();
   void move(GLfloat camera_position_x, GLfloat camera_position_y, int center_x,
             int center_y);

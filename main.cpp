@@ -1,6 +1,6 @@
+#include "Game.hpp"
 #include <GL/glut.h>
 #include <cstdlib>
-#include "Game.hpp"
 
 static void on_keyboard(unsigned char key, int x, int y);
 static void on_reshape(int width, int height);
@@ -25,6 +25,8 @@ int main(int argc, char **argv) {
   glutInitWindowPosition(100, 100);
   glutCreateWindow(argv[0]);
 
+  //
+  
   // Initialize callback functions
   glutKeyboardFunc(on_keyboard);
   glutReshapeFunc(on_reshape);
@@ -69,7 +71,6 @@ static void on_timer(int) {
 }
 
 static void on_mouse_click(int button, int state, int, int) {
-  // y = game.window().get_height() - y;
   if (button == GLUT_LEFT_BUTTON && state == GLUT_UP)
     game.mouse_action().on_left_click_down();
   else if (button == GLUT_RIGHT_BUTTON && state == GLUT_UP)
@@ -78,12 +79,12 @@ static void on_mouse_click(int button, int state, int, int) {
 
 static void on_keyboard(unsigned char key, int x, int y) {
   switch (key) {
-    case 27:
-      exit(0);
-      break;
-    default:
-      y = game.window().get_height() - y;
-      game.keyboard().key_down(key, x, y);
+  case 27:
+    exit(0);
+    break;
+  default:
+    y = game.window().get_height() - y;
+    game.keyboard().key_down(key, x, y);
   }
 }
 

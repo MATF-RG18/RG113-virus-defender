@@ -4,9 +4,9 @@
 #define VIRUS_HPP
 
 #include "GameObject.hpp"
+#include "Material.hpp"
 #include "Math.hpp"
 #include "Portal.hpp"
-#include "Material.hpp"
 namespace vd {
 class Virus : public GameObject {
 public:
@@ -25,7 +25,8 @@ public:
   void attack();
   void reset_speed() { m_speed = 1; }
   void update() override;
-  void set_material();
+
+
 protected:
   GLfloat m_hp;
   GLfloat m_speed;

@@ -53,9 +53,10 @@ template <typename T> void VirusFactory<T>::update() {
   if (is_active()) {
     if (m_remaning_spawn_ticks >= 0) {
       --m_remaning_spawn_ticks;
-    } else {
-      m_remaning_spawn_ticks = m_update_tick;
     }
+    // } else {
+    //   m_remaning_spawn_ticks = m_update_tick;
+    // }
 
     --m_remaning_active;
     if (m_remaning_active <= 0) {
