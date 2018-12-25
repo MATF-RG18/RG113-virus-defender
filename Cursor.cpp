@@ -4,6 +4,9 @@
 #include <iostream>
 namespace vd {
 
+
+// Izracunava poziciju cursora na ravni igre u zavisnosti od pomeranja
+// misa po ekranu
 void Cursor::move(GLfloat camera_position_x, GLfloat camera_position_y,
                   int center_x, int center_y) {
   GLfloat dx = m_x_on_screen - center_x;
@@ -22,6 +25,8 @@ void Cursor::move(GLfloat camera_position_x, GLfloat camera_position_y,
   m_x_on_plane = camera_position_x + dx;
   m_y_on_plane = camera_position_y + dy;
 
+  // postavlja poziciju na koju ce biti pacena magija kada se klikne
+  // misem
   m_spell_caster.set_x(m_x_on_plane);
   m_spell_caster.set_y(m_y_on_plane);
 

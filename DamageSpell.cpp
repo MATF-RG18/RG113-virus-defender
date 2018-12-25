@@ -9,6 +9,8 @@ DamageSpell::DamageSpell(GLfloat x, GLfloat y, GLfloat z)
     : Spell(x, y, z, GameVariables::DAMAGE_SPELL_DURATION, RADIUS) {
       m_animation_param = 0;
 }
+// Inicira draw listu kojom se crta DamageSpell
+// poziva se jednom samo Game::init()
 
 void DamageSpell::init()
 {
@@ -39,25 +41,30 @@ void DamageSpell::init()
 
   glEndList();
 }
-
+// Crta DamageSpell na ravni
 void DamageSpell::draw() {
 
+  // Podesavanjem debljine linije pravi se animacija
   glLineWidth(3 + 2*Math::cos(m_animation_param));
+
   glPushMatrix();
   glTranslatef(m_xyz[0], m_xyz[1], m_xyz[2]);
   glCallList(m_draw_list);
-
   glPopMatrix();
 }
+
 void DamageSpell::applay(Virus &v) { v.set_hp(v.get_hp() - m_damage_per_tick); }
 
 void DamageSpell::update() {
   if (!is_active())
-    return;
-  
+    return;  
 
+  // Kada istekne trajanje spella on se deaktivira
   if (m_duration_ticks >= 0 ) {
     --m_duration_ticks;
+
+    // Ukoliko je postavljeno trajanje spell-a na inf tikova
+    // to znaci da je u pitanju perma spell i on se ne animira
     if (GameVariables::DAMAGE_SPELL_DURATION >= m_duration_ticks)
       m_animation_param += 20;
 

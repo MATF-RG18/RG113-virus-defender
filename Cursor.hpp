@@ -17,15 +17,21 @@ public:
   void set_on_screen_y(int y) { m_y_on_screen = y; }
 
   void init();
+  
   void move(GLfloat camera_position_x, GLfloat camera_position_y, int center_x,
             int center_y);
 
+  // Funkcije za bacanje spell-a. Pozivaju se klikom na dugme misa
   void cast_spell() { m_spell_caster.cast_active_spell(); }
   void cast_perma_spell() { m_spell_caster.cast_active_perma_spell(); }
+
   void draw();
+
+  // (x,y) pozicija cursora na ekranu
   int get_on_screen_x() const { return m_x_on_screen; }
   int gey_on_screen_y() const { return m_y_on_screen; }
 
+  // (x,y) pozicija cursora na ravni igre
   GLfloat get_x_on_plane() const { return m_x_on_plane; }
   GLfloat get_y_on_plane() const { return m_y_on_plane; }
 

@@ -10,7 +10,8 @@ EvasiveVirus::EvasiveVirus(GLfloat x, GLfloat y, GLfloat z)
     : Virus(x, y, z, HP, SPEED, RADIUS) {
 
 }
-
+// Inicijalizacija draw liste za cratnje EvasiveVirusa
+// poziva se samo jednom u Game::init
 void EvasiveVirus::init()
 {
   m_draw_list = glGenLists(1);
@@ -25,12 +26,12 @@ void EvasiveVirus::init()
 }
 
 void EvasiveVirus::draw() {
-  // m_material.draw();
   glPushMatrix();
   glTranslatef(m_xyz[0], m_xyz[1], m_xyz[2]);
   glCallList(m_draw_list);
   glPopMatrix();
 }
+
 void EvasiveVirus::update() {
   Virus::update();
   m_speed = SPEED;

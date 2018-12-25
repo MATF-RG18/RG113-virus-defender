@@ -20,6 +20,8 @@
 #include <GL/glut.h>
 #include <vector>
 namespace vd {
+
+// Game klasa sadrzi sve objete koji se koriste u igri
 class Game {
 public:
   Game();
@@ -28,9 +30,6 @@ public:
   void update();
   void draw();
 
-  void test() { std::cerr << "hello world"; }
-  int get_msec_timer_update() const { return m_msec_update; }
-  int get_timer_id() const { return m_timer_id; }
   Timer &timer() { return m_timer; }
   Window &window() { return m_window; }
   KeyboardAction &keyboard() { return m_keyboard_action; }
@@ -41,8 +40,6 @@ public:
   bool not_over() { return GameVariables::PORTAL_HP > 0; }
 
 private:
-  const int m_msec_update = 13;
-  const int m_timer_id = 1;
   GridController m_grid_controller;
   Window &m_window{GameVariables::window};
   Camera m_camera;

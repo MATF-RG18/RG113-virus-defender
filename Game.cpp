@@ -11,6 +11,9 @@ Game::Game()
       m_passive_mouse_motion_action(m_camera, m_window, m_cursor),
       m_mouse_action(m_cursor) {}
 
+// Inicijliazuje sve potrebne klase
+// Poziva se pre glutMainLoop
+
 void Game::init() {
   m_cursor.init();
   m_main_light.enable();
@@ -21,23 +24,22 @@ void Game::init() {
   FastVirus::init();
   SlowSpell::init();
   DamageSpell::init();
-
-  
-
 }
-
+// Poziva se u on_timer callback funkciji.
+// Azurira sve podatke svih aktivinih objekata u igri
 void Game::update() {
   m_grid_controller.update();
   stats.update();
   GameVariables::update();
 }
 
+
+// Crta sve aktivne objekte u igri
 void Game::draw() {
   glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
+  
   m_camera.setup();
-
-  // m_main_light.draw();
 
   m_cursor.move(m_camera.position_point()[0], m_camera.position_point()[1],
                 m_window.get_center_x(), m_window.get_center_y());
