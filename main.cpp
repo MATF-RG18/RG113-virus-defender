@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
   glClearColor(0, 0, 0, 0);
 
   game.init();
-
+  glutFullScreen();
   glutMainLoop();
 
   return 0;

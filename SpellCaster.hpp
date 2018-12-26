@@ -30,7 +30,7 @@ public:
     if (GameVariables::MANA >= GameVariables::SPELL_MANA_WORTH) {
       m_active_spell->set_normal_spell();
       if (m_indicator == Spells::SLOW) {
-        m_grid.cast_spell(m_slow_spell);
+        m_grid.cast_spell(m_slow_]spell);
       } else if (m_indicator == Spells::DAMAGE) {
         m_grid.cast_spell(m_damage_spell);
       }
@@ -38,8 +38,7 @@ public:
     }
   }
   void cast_active_perma_spell() {
-    if (GameVariables::PERMA_SPELL_WORTH <= GameVariables::PLASMA &&
-        GameVariables::MANA >= GameVariables::SPELL_MANA_WORTH) {
+    if (GameVariables::PERMA_SPELL_WORTH <= GameVariables::PLASMA) {
       m_active_spell->set_perma_spell();
       GameVariables::PLASMA -= GameVariables::PERMA_SPELL_WORTH;
       if (m_indicator == Spells::SLOW) {
