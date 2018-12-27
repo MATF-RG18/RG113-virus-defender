@@ -16,8 +16,13 @@
 #include <random>
 namespace vd {
 
-class GridController {
+/*
+  GridController upravlja svim objektima u igri.
+  Poziva poziva update, proverava kolizije i zatim
+  crta aktivne objekte.
+*/
 
+class GridController {
 public:
   GridController();
   void cast_spell(const SlowSpell &spell) { m_slow_spells.insert(spell); }
@@ -30,16 +35,21 @@ private:
   static constexpr int MAX_VIRUSES = 150;
   static constexpr int MAX_ACTIVE_SPELLS = 200;
 
+  // Svi Spells u igri
   GameObjectContainer<SlowSpell, MAX_ACTIVE_SPELLS> m_slow_spells;
   GameObjectContainer<DamageSpell, MAX_ACTIVE_SPELLS> m_damage_spells;
+
+  // Svi Virusi u igri
   GameObjectContainer<StrongVirus, MAX_VIRUSES> m_strong_viruses;
   GameObjectContainer<FastVirus, MAX_VIRUSES> m_fast_viruses;
   GameObjectContainer<EvasiveVirus, MAX_VIRUSES> m_evasive_viruses;
 
+  // Svi VirusFactory koji prave viruse na nasumicnim intervalima
   std::vector<VirusFactory<StrongVirus>> m_strong_virus_factories;
   std::vector<VirusFactory<EvasiveVirus>> m_evasive_virus_factories;
   std::vector<VirusFactory<FastVirus>> m_fast_virus_factories;
 
+  // Portal na sredini ravni
   Portal m_portal;
 
   void update_factories();
@@ -47,6 +57,7 @@ private:
   void update_viruses();
   void update_collisions();
 
+  // Funkcije za proveru kolizijie
   bool colides(const Virus &v, const Portal &p) {
     return Math::distance(v.get_x(), v.get_y(), v.get_z(), p.get_x(), p.get_y(),
                           p.get_z()) < p.get_radius();

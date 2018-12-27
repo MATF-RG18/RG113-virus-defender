@@ -17,11 +17,6 @@ public:
 
   void set_hp(GLfloat hp) { m_hp = hp; }
   void set_speed(GLfloat speed) { m_speed = speed; }
-  void set_color(GLfloat r, GLfloat g, GLfloat b) {
-    m_color_rgb[0] = r;
-    m_color_rgb[1] = g;
-    m_color_rgb[2] = b;
-  }
   void attack();
   void reset_speed() { m_speed = 1; }
   void update() override;

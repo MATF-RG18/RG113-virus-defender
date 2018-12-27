@@ -9,7 +9,11 @@
 #include <GL/glut.h>
 #include <vector>
 namespace vd {
+/*
+  Klasa koja na nasumicnom intervalu stvara tip virus T
+  i ubacuje ga u GridController.
 
+*/
 template <typename T> class VirusFactory : public GameObject {
 public:
   using iterator = std::vector<T>;
@@ -34,15 +38,20 @@ public:
   void draw() override {}
 
 private:
-  // How many ticks does it take to generate all viruses
+  // Na koliko tikova se stvara virus
   GLfloat m_spawn_interval;
 
+  
   const int m_update_tick;
+
+  // Ostatak tikova do stvaranja virusa
   int m_remaning_spawn_ticks;
 
+  // Broj tikova koji Factory stvara viruse
   const int m_active_interval;
   int m_remaning_active;
 
+  // Broj tikova koji Factory ne stvara viruse
   const int m_sleep_interval;
   int m_remaning_sleep;
 
@@ -51,19 +60,23 @@ private:
 
 template <typename T> void VirusFactory<T>::update() {
   if (is_active()) {
+
     if (m_remaning_spawn_ticks >= 0) {
       --m_remaning_spawn_ticks;
     }
-    // } else {
-    //   m_remaning_spawn_ticks = m_update_tick;
-    // }
 
     --m_remaning_active;
+    // Ako je isteklo vreme
+    // koje je factory aktivan
+    // postavi factory da spava
+    // i deaktiviraj ga tako da ne stvara vise virusa
     if (m_remaning_active <= 0) {
       m_remaning_sleep = m_sleep_interval;
       deactivate();
     }
   } else {
+    // Kada istekne vreme u kojem factory spava
+    // ponovo ga aktiviraj
     if (m_remaning_sleep >= 0) {
       --m_remaning_sleep;
     } else {

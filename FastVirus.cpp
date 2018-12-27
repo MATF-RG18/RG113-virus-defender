@@ -29,6 +29,13 @@ void FastVirus::draw() {
   glCallList(m_draw_list);
   glPopMatrix();
 }
+
+ // nakon svakog update-a vracamo virusu m_speed na pocetnu vrednost
+  // Nakon sto se pozove update za sve viruse u GridController
+  // poziva se applay spell za sve viruse koji se nalaze u 
+  // range-u spella. 
+  // Ovako se eliminse potreba da se proverava kada je virus izasao
+  // iz range spell-a jer ce se brzina vratiti na pocetnu
 void FastVirus::update() {
   Virus::update();
   m_speed = SPEED;

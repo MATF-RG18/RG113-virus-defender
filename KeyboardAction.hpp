@@ -4,8 +4,13 @@
 
 #include "Camera.hpp"
 #include "SpellCaster.hpp"
-#include <functional>
 namespace vd {
+  /*
+    KeyboardAction registruje validne komande u igri
+    i poziva odvoarajuce funkcije u zavisnosti od pritisnutog tastera
+    tastera
+
+  */
 class KeyboardAction {
 public:
   KeyboardAction(Camera &camera, SpellCaster &spell_caster)

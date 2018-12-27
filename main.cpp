@@ -63,6 +63,8 @@ static void on_keyboard_up(unsigned char key, int x, int y) {
 }
 static void on_timer(int) {
   if (game.not_over()) {
+    // U svakoj pozivu timer-a 
+    // azuriraju se svi aktivni objekti igre
     game.update();
     glutPostRedisplay();
     glutTimerFunc(game.timer().get_msec_update(), on_timer,
@@ -84,6 +86,8 @@ static void on_keyboard(unsigned char key, int x, int y) {
     break;
   default:
     y = game.window().get_height() - y;
+
+    // Prosledjuje se pritisak tastera
     game.keyboard().key_down(key, x, y);
   }
 }

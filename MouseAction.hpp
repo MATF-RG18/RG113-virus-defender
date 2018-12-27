@@ -5,6 +5,10 @@
 
 #include "Cursor.hpp"
 namespace vd {
+
+/*
+  Callback funkcije za pritisak dugmenta misa
+*/
 class MouseAction {
 public:
   MouseAction(Cursor &cursor) : m_cursor(cursor) {}

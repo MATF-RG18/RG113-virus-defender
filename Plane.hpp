@@ -4,7 +4,12 @@
 
 #include "Material.hpp"
 namespace vd {
+/*
+  Ravan na kojoj se desava igra.
+  Plane samo sadrzi metode za crtanje date ravni.
+  Sve akcije se odvijaju u GridController klasi
 
+*/
 class Plane {
 public:
   Plane();

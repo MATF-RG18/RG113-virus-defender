@@ -1,7 +1,7 @@
 
 #if !defined(FASTVIRUS_HPP)
 #define FASTVIRUS_HPP
-#include "MaterialProperties.hpp"
+
 #include "Virus.hpp"
 #include <GL/glut.h>
 namespace vd {
@@ -16,7 +16,6 @@ public:
   static constexpr GLfloat SPEED{0.08};
 
 private:
-  static MaterialProperties m_material_prop;
   static GLuint m_draw_list;
   static Material m_material;
 };

@@ -19,7 +19,6 @@ void Stats::draw() {
   glPushMatrix();
   glLoadIdentity();
   glDisable(GL_LIGHTING);
-  // glDisable(GL_LIGHT0);
   gluOrtho2D(0.0, current_width, current_height, 0.0);
 
   glRasterPos2i(current_width - current_width * 0.5,
@@ -40,7 +39,6 @@ void Stats::draw() {
     glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, c);
 
   glEnable(GL_LIGHTING);
-  // glEnable(GL_LIGHT0);
   glMatrixMode(GL_PROJECTION);
   glPopMatrix();
   glMatrixMode(GL_MODELVIEW);

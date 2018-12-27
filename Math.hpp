@@ -6,7 +6,10 @@
 #include <array>
 #include <cmath>
 namespace vd {
+/*
+  Pomocna math klasa za matematicka izracunavanja
 
+*/
 class Math {
 public:
   static GLfloat distance(GLfloat ax, GLfloat ay, GLfloat az, GLfloat bx,
@@ -22,6 +25,7 @@ public:
   static GLfloat cos(int deg) { return m_cos[deg % 360]; }
 
 private:
+  // Tablerina sin i cos funkcije u stepenima
   const static std::array<GLfloat, 360> m_sin;
   const static std::array<GLfloat, 360> m_cos;
 };

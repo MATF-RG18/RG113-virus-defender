@@ -2,7 +2,6 @@
 #if !defined(EVASIVEVIRUS_HPP)
 #define EVASIVEVIRUS_HPP
 
-#include "MaterialProperties.hpp"
 #include "Virus.hpp"
 namespace vd {
 class EvasiveVirus : public Virus {

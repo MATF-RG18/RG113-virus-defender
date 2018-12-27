@@ -3,7 +3,9 @@
 #define WINDOW_HPP
 
 namespace vd {
-
+/*
+  Wrapper klasa oko WindowProzora
+.*/
 class Window {
 public:
   Window() = default;

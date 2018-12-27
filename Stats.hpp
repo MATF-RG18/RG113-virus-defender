@@ -4,9 +4,15 @@
 #include <string>
 
 namespace vd {
+/*
+  Konvertuje u string i ispisuje na ekranu
+  trenutno stanje PLASMA, PORTAL_HP, i MANA
+  promenljivih
+*/
 class Stats {
 
 public:
+
   void update();
   void draw();
 

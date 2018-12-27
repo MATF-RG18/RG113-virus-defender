@@ -1,10 +1,13 @@
 #if !defined(SLOWSPELL_HPP)
 #define SLOWSPELL_HPP
 #include "GameVariables.hpp"
-#include "MaterialProperties.hpp"
+
 #include "Spell.hpp"
 namespace vd {
-
+/*
+  Spell koji usporava viruse kada se
+  nadju u njemu
+*/
 class SlowSpell : public Spell {
 public:
   SlowSpell(GLfloat x = 0, GLfloat y = 0, GLfloat z = 0.01);
@@ -16,7 +19,9 @@ public:
   void set_normal_spell() override {
     m_duration_ticks = GameVariables::SLOW_SPELL_DURATION;
   }
-  static void init();
+  static void init(); 
+  static constexpr int PLASMA_WORTH = 250;
+  static constexpr int MANA_WORTH = 50;
 
 private:
   static GLuint m_draw_list;

@@ -2,6 +2,7 @@
 #include <iostream>
 namespace vd {
 
+// Regisutrije pritisak tastera i poziva odovarajucu funkciju
 void KeyboardAction::key_down(unsigned key, int x, int y) {
   switch (key) {
   case '1':
@@ -24,6 +25,8 @@ void KeyboardAction::key_down(unsigned key, int x, int y) {
     break;
   }
 }
+
+// Regisutrje odpustanje tastera i poziva odgovarajucu funkciju
 void KeyboardAction::key_up(unsigned key, int x, int y) {
   switch (key) {
 

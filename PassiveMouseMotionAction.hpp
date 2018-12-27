@@ -6,19 +6,23 @@
 #include "Cursor.hpp"
 #include "Window.hpp"
 namespace vd {
+  /*
+    Regisutrije pasivan pokret misa
+
+  */
 class PassiveMouseMotionAction {
 public:
-  PassiveMouseMotionAction(Camera &camera, Window &window, Cursor &cursor)
-      : m_camera(camera), m_window(window), m_cursor(cursor) {}
+  PassiveMouseMotionAction(Cursor &cursor)
+      : m_cursor(cursor) {}
 
+  // Kada se mis pomeri na ekranu
+  // poziva metode cursora da postavi
+  // poziciju na ravni igre
   void on_move(int x, int y);
 
 private:
-  Camera &m_camera;
-  Window &m_window;
-  Cursor &m_cursor;
 
-  void set_camera_movment_direction(int x, int y);
+  Cursor &m_cursor;
 };
 } // namespace vd
 #endif // MOUSE_MOTION_ACTION_HPP

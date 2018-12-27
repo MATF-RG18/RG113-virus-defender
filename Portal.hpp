@@ -5,11 +5,17 @@
 #include "GameVariables.hpp"
 #include "Material.hpp"
 namespace vd {
+  /*
+    Klasa koja predstavlja portal
+    koji se nalazi na sredni ravni i kojeg
+    virusi napadaju
+  */
 class Portal : public GameObject {
 public:
   Portal();
   void draw() override;
   void update() override;
+
   void take_damage(GLfloat damage) {
     GameVariables::PORTAL_HP -= damage;
     if (GameVariables::PORTAL_HP <= 0) {

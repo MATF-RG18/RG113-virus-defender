@@ -3,6 +3,7 @@
 #include <cmath>
 namespace vd {
 
+// Postavlja vektor kretanja u pravcu portala
 void Virus::attack() {
   auto dx = 25 - m_xyz[0];
   auto dy = 25 - m_xyz[1];

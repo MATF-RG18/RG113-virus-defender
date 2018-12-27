@@ -3,7 +3,11 @@
 #define TIMER_HPP
 
 namespace vd {
+/*
+  Wrapper oko podataka potrebnih za
+  on_timer callback
 
+*/
 class Timer {
 public:
   Timer(int msec_update, int timer_id)

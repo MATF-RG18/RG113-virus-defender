@@ -6,6 +6,11 @@
 
 namespace vd {
 
+/*
+  Wrapper klasa oko openGL API-a za upravaljnje svetlom
+
+*/
+
 class Light {
 public:
   Light(GLenum light_id) : m_light_id(light_id) {}
@@ -18,6 +23,7 @@ public:
   void disable();
 
 private:
+  // Inicijalno postavljena na parametre jedinog postojeceg svetla.
   GLfloat m_light_ambient[4] = {0.7, 0.7, 0.7, 1};
   GLfloat m_light_diffuse[4] = {0.7, 0.7, 0.7, 1};
   GLfloat m_light_specular[4] = {0.7, 0.7, 0.7, 1};

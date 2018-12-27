@@ -2,7 +2,6 @@
 #if !defined(STRONGVIRUS_HPP)
 #define STRONGVIRUS_HPP
 
-#include "MaterialProperties.hpp"
 #include "Virus.hpp"
 namespace vd {
 class StrongVirus : public Virus {

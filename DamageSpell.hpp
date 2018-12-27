@@ -2,7 +2,6 @@
 #if !defined(DAMAGESPELL_HPP)
 #define DAMAGESPELL_HPP
 
-#include "MaterialProperties.hpp"
 #include "Spell.hpp"
 #include "Virus.hpp"
 namespace vd {
@@ -17,6 +16,9 @@ public:
     m_duration_ticks = GameVariables::DAMAGE_SPELL_DURATION;
   }
   static void init();
+
+  static constexpr int PLASMA_WORTH = 500;
+  static constexpr int MANA_WORTH = 100;
 
 private:
   constexpr static GLfloat m_damage_per_tick{10};

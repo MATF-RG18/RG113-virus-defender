@@ -6,6 +6,7 @@
 #include <iostream>
 
 namespace vd {
+// Bazna klasa za viruse i spell-ove
 class GameObject {
 public:
   GameObject() = default;
@@ -24,6 +25,7 @@ protected:
   GLfloat m_xyz[3];
 
 private:
+  // metode draw i update se pozivaju samo nad aktivnim objektima
   bool m_active = false;
 };
 

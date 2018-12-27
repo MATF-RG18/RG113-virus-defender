@@ -5,7 +5,10 @@
 #include <GL/glut.h>
 
 namespace vd {
+/*
+  Wrapper klasa oko openGL API za materijale
 
+*/
 class Material {
 
 public:
