@@ -6,9 +6,7 @@ GLuint SlowSpell::m_draw_list;
 Material SlowSpell::m_material;
 
 SlowSpell::SlowSpell(GLfloat x, GLfloat y, GLfloat z)
-    : Spell(x, y, z, SlowSpell::TICK_DURATION, RADIUS) {
-
-}
+    : Spell(x, y, z, SlowSpell::TICK_DURATION, RADIUS) {}
 void SlowSpell::init() {
   m_material.set_ambient(0, 0, 1, 1);
   m_material.set_diffuse(0, 0, 1, 1);

@@ -35,37 +35,36 @@ public:
   Spell &get_active_spell() const { return *m_active_spell; }
 
   void cast_active_spell() {
-      // Postavlja se trajanje aktivnog spella
-      m_active_spell->set_normal_spell();
+    // Postavlja se trajanje aktivnog spella
+    m_active_spell->set_normal_spell();
 
-      // Ako ima dovoljno mana da se baci slow spell
-      // baci ga i oduzmi od ukupno mana koliko kosta spell.
-      // Isto za Damage spell
-      if (m_indicator == Spells::SLOW 
-        && SlowSpell::MANA_WORTH <= GameVariables::MANA) {
-        GameVariables::MANA -= SlowSpell::MANA_WORTH;
-        m_grid.cast_spell(m_slow_spell);
-      } 
-      else if (m_indicator == Spells::DAMAGE && 
-      DamageSpell::MANA_WORTH <= GameVariables::MANA) {
-        GameVariables::MANA -= DamageSpell::MANA_WORTH;
-        m_grid.cast_spell(m_damage_spell);
-      }
+    // Ako ima dovoljno mana da se baci slow spell
+    // baci ga i oduzmi od ukupno mana koliko kosta spell.
+    // Isto za Damage spell
+    if (m_indicator == Spells::SLOW &&
+        SlowSpell::MANA_WORTH <= GameVariables::MANA) {
+      GameVariables::MANA -= SlowSpell::MANA_WORTH;
+      m_grid.cast_spell(m_slow_spell);
+    } else if (m_indicator == Spells::DAMAGE &&
+               DamageSpell::MANA_WORTH <= GameVariables::MANA) {
+      GameVariables::MANA -= DamageSpell::MANA_WORTH;
+      m_grid.cast_spell(m_damage_spell);
+    }
   }
   void cast_active_perma_spell() {
-      // Ako ima dovoljno plazme da se baci aktivni spell
-      // kao perma spell onda se baca. Ako ne
-      // nista se nece desiti
-      m_active_spell->set_perma_spell();
-      if (m_indicator == Spells::SLOW && 
-      SlowSpell::PLASMA_WORTH <= GameVariables::PLASMA) {
-        GameVariables::PLASMA -= SlowSpell::PLASMA_WORTH;
-        m_grid.cast_spell(m_slow_spell);
-      } else if (m_indicator == Spells::DAMAGE &&
-      DamageSpell::PLASMA_WORTH <= GameVariables::PLASMA) {
-        GameVariables::PLASMA -= DamageSpell::PLASMA_WORTH;
-        m_grid.cast_spell(m_damage_spell);
-      }
+    // Ako ima dovoljno plazme da se baci aktivni spell
+    // kao perma spell onda se baca. Ako ne
+    // nista se nece desiti
+    m_active_spell->set_perma_spell();
+    if (m_indicator == Spells::SLOW &&
+        SlowSpell::PLASMA_WORTH <= GameVariables::PLASMA) {
+      GameVariables::PLASMA -= SlowSpell::PLASMA_WORTH;
+      m_grid.cast_spell(m_slow_spell);
+    } else if (m_indicator == Spells::DAMAGE &&
+               DamageSpell::PLASMA_WORTH <= GameVariables::PLASMA) {
+      GameVariables::PLASMA -= DamageSpell::PLASMA_WORTH;
+      m_grid.cast_spell(m_damage_spell);
+    }
   }
   void set_x(GLfloat x) { m_active_spell->set_x(x); }
   void set_y(GLfloat y) { m_active_spell->set_y(y); }

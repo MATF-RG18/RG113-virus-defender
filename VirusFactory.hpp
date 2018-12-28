@@ -41,7 +41,6 @@ private:
   // Na koliko tikova se stvara virus
   GLfloat m_spawn_interval;
 
-  
   const int m_update_tick;
 
   // Ostatak tikova do stvaranja virusa

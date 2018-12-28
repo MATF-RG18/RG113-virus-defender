@@ -12,7 +12,6 @@ namespace vd {
 class Stats {
 
 public:
-
   void update();
   void draw();
 

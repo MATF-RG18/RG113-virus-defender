@@ -16,10 +16,8 @@ public:
   void update() override;
 
   void applay(Virus &v) override;
-  void set_normal_spell() override {
-    m_duration_ticks = TICK_DURATION;
-  }
-  static void init(); 
+  void set_normal_spell() override { m_duration_ticks = TICK_DURATION; }
+  static void init();
   static constexpr int PLASMA_WORTH = 250;
   static constexpr int MANA_WORTH = 50;
 

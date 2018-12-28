@@ -4,7 +4,7 @@
 namespace vd {
 /*
   Na obodima ravnin na kojoj se desava igra
-  se inicijalizuju VirusFactories za svaki od 
+  se inicijalizuju VirusFactories za svaki od
   tip virusa.
 */
 GridController::GridController() {
@@ -81,7 +81,6 @@ void GridController::applay_spells() {
   }
 }
 
-
 void GridController::update_viruses() {
   // poziva se update metod za sve viruse
   m_strong_viruses.update();
@@ -112,7 +111,6 @@ void GridController::update_viruses() {
   }
 }
 
-
 void GridController::update_factories() {
   // Pozva se update metod za sve VirusFactory
   for (auto &f : m_strong_virus_factories) {
@@ -124,7 +122,6 @@ void GridController::update_factories() {
   for (auto &f : m_fast_virus_factories) {
     f.update();
   }
-  
 
   // Ako je neki od factory-a spreman ubacuje virus
   // u grid controller

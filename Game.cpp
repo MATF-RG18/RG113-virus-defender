@@ -8,8 +8,7 @@ namespace vd {
 Game::Game()
     : m_camera(), m_spell_caster(m_grid_controller),
       m_keyboard_action(m_camera, m_spell_caster), m_cursor(m_spell_caster),
-      m_passive_mouse_motion_action(m_cursor),
-      m_mouse_action(m_cursor) {}
+      m_passive_mouse_motion_action(m_cursor), m_mouse_action(m_cursor) {}
 
 // Inicijliazuje sve potrebne klase
 // Poziva se pre glutMainLoop
@@ -48,7 +47,7 @@ void Game::draw() {
   // Nacrtaj plane
   m_plane.draw();
 
-  // U grid controller se nalaze svi GameObject koji su aktivni. 
+  // U grid controller se nalaze svi GameObject koji su aktivni.
   // To ukljucuje viruse i spell-ove. Grid controller ih crta u ravni
   m_grid_controller.draw();
 

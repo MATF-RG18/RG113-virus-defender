@@ -10,7 +10,6 @@ namespace vd {
 
 class GameVariables {
 public:
-
   static Window window;
 
   // Dokle god je GAME_ON true poziva se on_timer callback
@@ -30,7 +29,6 @@ public:
 
   // Broj mana koje se obnavljaju svakim tikom
   static constexpr GLfloat MANA_REFRESH_RATE = 10;
-
 
   static constexpr int INIT_WINDOW_HEIGHT = 768;
   static constexpr int INIT_WINDOW_WIDTH = 768;

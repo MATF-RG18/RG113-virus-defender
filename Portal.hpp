@@ -5,11 +5,11 @@
 #include "GameVariables.hpp"
 #include "Material.hpp"
 namespace vd {
-  /*
-    Klasa koja predstavlja portal
-    koji se nalazi na sredni ravni i kojeg
-    virusi napadaju
-  */
+/*
+  Klasa koja predstavlja portal
+  koji se nalazi na sredni ravni i kojeg
+  virusi napadaju
+*/
 class Portal : public GameObject {
 public:
   Portal();

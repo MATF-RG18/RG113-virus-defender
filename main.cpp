@@ -63,7 +63,7 @@ static void on_keyboard_up(unsigned char key, int x, int y) {
 }
 static void on_timer(int) {
   if (game.not_over()) {
-    // U svakoj pozivu timer-a 
+    // U svakoj pozivu timer-a
     // azuriraju se svi aktivni objekti igre
     game.update();
     glutPostRedisplay();

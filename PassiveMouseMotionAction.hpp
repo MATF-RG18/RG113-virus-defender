@@ -6,14 +6,13 @@
 #include "Cursor.hpp"
 #include "Window.hpp"
 namespace vd {
-  /*
-    Regisutrije pasivan pokret misa
+/*
+  Regisutrije pasivan pokret misa
 
-  */
+*/
 class PassiveMouseMotionAction {
 public:
-  PassiveMouseMotionAction(Cursor &cursor)
-      : m_cursor(cursor) {}
+  PassiveMouseMotionAction(Cursor &cursor) : m_cursor(cursor) {}
 
   // Kada se mis pomeri na ekranu
   // poziva metode cursora da postavi
@@ -21,7 +20,6 @@ public:
   void on_move(int x, int y);
 
 private:
-
   Cursor &m_cursor;
 };
 } // namespace vd

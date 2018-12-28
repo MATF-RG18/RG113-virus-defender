@@ -12,14 +12,12 @@ public:
   void draw() override;
   void update() override;
   void applay(Virus &v) override;
-  void set_normal_spell() override {
-    m_duration_ticks = TICK_DURATION;
-  }
+  void set_normal_spell() override { m_duration_ticks = TICK_DURATION; }
   static void init();
 
   static constexpr int PLASMA_WORTH = 500;
   static constexpr int MANA_WORTH = 100;
-  
+
 private:
   constexpr static GLfloat m_damage_per_tick{10};
   constexpr static GLfloat RADIUS = 1.25;
