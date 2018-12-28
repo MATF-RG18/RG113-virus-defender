@@ -13,16 +13,17 @@ public:
   void update() override;
   void applay(Virus &v) override;
   void set_normal_spell() override {
-    m_duration_ticks = GameVariables::DAMAGE_SPELL_DURATION;
+    m_duration_ticks = TICK_DURATION;
   }
   static void init();
 
   static constexpr int PLASMA_WORTH = 500;
   static constexpr int MANA_WORTH = 100;
-
+  
 private:
   constexpr static GLfloat m_damage_per_tick{10};
   constexpr static GLfloat RADIUS = 1.25;
+  constexpr static int TICK_DURATION = 125;
   static GLuint m_draw_list;
   static Material m_material;
 };

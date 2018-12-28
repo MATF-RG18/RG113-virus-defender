@@ -28,14 +28,12 @@ public:
 
   static constexpr int MAX_MANA = 1000;
 
-
   // Broj mana koje se obnavljaju svakim tikom
   static constexpr GLfloat MANA_REFRESH_RATE = 10;
 
 
   static constexpr int INIT_WINDOW_HEIGHT = 768;
   static constexpr int INIT_WINDOW_WIDTH = 768;
-
 
   static constexpr long long INF_TIME_TICKS =
       std::numeric_limits<long long>::max();
@@ -45,12 +43,6 @@ public:
 
   // Cena bacanja perma spell-a
   static constexpr long long PERMA_SPELL_WORTH = 1000;
-
-  // Trajanje SLOW spell-a u tikovima
-  static constexpr int SLOW_SPELL_DURATION = 250;
-
-  // Trajanje DAMAGE spell-a u tikovima
-  static constexpr int DAMAGE_SPELL_DURATION = 125;
 
   static constexpr int TICKS_PER_SEC = 60;
 

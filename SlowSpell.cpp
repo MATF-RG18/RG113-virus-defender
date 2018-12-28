@@ -1,11 +1,12 @@
 #include "SlowSpell.hpp"
 #include <GL/glut.h>
+
 namespace vd {
 GLuint SlowSpell::m_draw_list;
 Material SlowSpell::m_material;
 
 SlowSpell::SlowSpell(GLfloat x, GLfloat y, GLfloat z)
-    : Spell(x, y, z, GameVariables::SLOW_SPELL_DURATION, RADIUS) {
+    : Spell(x, y, z, SlowSpell::TICK_DURATION, RADIUS) {
 
 }
 void SlowSpell::init() {
@@ -55,7 +56,7 @@ void SlowSpell::update() {
 
     // Paramtera za animaciju se uvecava ako je ovo obican spell
     // Ne i ako je perma spell
-    if (GameVariables::SLOW_SPELL_DURATION >= m_duration_ticks)
+    if (SlowSpell::TICK_DURATION >= m_duration_ticks)
       m_animation_param += 20;
   } else {
     deactivate();

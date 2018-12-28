@@ -20,12 +20,14 @@ public:
   static GLfloat distance(GLfloat ax, GLfloat ay, GLfloat bx, GLfloat by) {
     return sqrt((ax - bx) * (ax - bx) + (ay - by) * (ay - by));
   }
+  
   constexpr static double PI = 3.14159265359;
+  
   static GLfloat sin(int deg) { return m_sin[deg % 360]; }
   static GLfloat cos(int deg) { return m_cos[deg % 360]; }
 
 private:
-  // Tablerina sin i cos funkcije u stepenima
+  // Tabelirana sin i cos funkcije u stepenima
   const static std::array<GLfloat, 360> m_sin;
   const static std::array<GLfloat, 360> m_cos;
 };

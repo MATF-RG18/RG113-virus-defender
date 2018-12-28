@@ -17,7 +17,7 @@ public:
 
   void applay(Virus &v) override;
   void set_normal_spell() override {
-    m_duration_ticks = GameVariables::SLOW_SPELL_DURATION;
+    m_duration_ticks = TICK_DURATION;
   }
   static void init(); 
   static constexpr int PLASMA_WORTH = 250;
@@ -27,6 +27,7 @@ private:
   static GLuint m_draw_list;
   static Material m_material;
   static constexpr GLfloat RADIUS = 1.25;
+  static constexpr int TICK_DURATION = 250;
 };
 
 } // namespace vd

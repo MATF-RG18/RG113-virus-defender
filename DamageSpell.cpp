@@ -1,12 +1,13 @@
 #include "DamageSpell.hpp"
 #include "Math.hpp"
 #include <GL/glut.h>
+
 namespace vd {
 GLuint DamageSpell::m_draw_list;
 Material DamageSpell::m_material;
 
 DamageSpell::DamageSpell(GLfloat x, GLfloat y, GLfloat z)
-    : Spell(x, y, z, GameVariables::DAMAGE_SPELL_DURATION, RADIUS) {
+    : Spell(x, y, z, DamageSpell::TICK_DURATION, RADIUS) {
   m_animation_param = 0;
 }
 // Inicira draw listu kojom se crta DamageSpell
@@ -64,7 +65,7 @@ void DamageSpell::update() {
 
     // Ukoliko je postavljeno trajanje spell-a na inf tikova
     // to znaci da je u pitanju perma spell i on se ne animira
-    if (GameVariables::DAMAGE_SPELL_DURATION >= m_duration_ticks)
+    if (DamageSpell::TICK_DURATION >= m_duration_ticks)
       m_animation_param += 20;
 
   } else {
