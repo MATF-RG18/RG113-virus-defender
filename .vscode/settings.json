@@ -36,6 +36,8 @@
         "string_view": "cpp",
         "bitset": "cpp",
         "cstdarg": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "deque": "cpp",
+        "algorithm": "cpp"
     }
 }

@@ -1,21 +1,25 @@
-CC      = g++
-CXXFLAGS  = -Wall -std=c++17 -Wextra -O3
-CPPFLAGS  = -lglut -lGLU -lGL
+EXE = prog
 
-SRC_FILES := $(wildcard *.cpp)
-OBJ_FILES := $(patsubst %.cpp, %.o, $(SRC_FILES))
+SRC_DIR = src
+OBJ_DIR = obj
 
-PROGRAM = main
+SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
+OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
-$(PROGRAM): $(OBJ_FILES)
-	$(CC) -o $@ $^ $(CPPFLAGS)
+CPPFLAGS += -Iinclude
+CXXFLAGS += -Wall -std=c++17 -Wextra -O3 
+LDFLAGS += -lm -lglut -lGLU -lGL
 
-%.o: %.cpp
-	$(CC) $(CXXFLAGS) -c -o $@ $< 
+CC = g++
+.PHONY: all clean
 
+all: $(EXE)
 
-.PHONY: clean
+$(EXE): $(OBJ_FILES)
+	g++ -o $@ $^ $(LDFLAGS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	g++ $(CPPFLAGS) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-	-rm *.o $(PROGRAM) *core
-
+	$(RM) $(OBJ_DIR)/*.o
